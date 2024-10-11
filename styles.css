@@ -6,6 +6,7 @@
 :root {
   --linear-gradient-one: linear-gradient(rgba(139, 69, 19, 0.5), rgba(255, 165, 0, 0.5));
   --linear-gradient-two: linear-gradient(rgba(0, 128, 128, 0.5), rgba(139, 69, 19, 0.5));
+  --logo-font: font(bagel fat one);
   
 }
 
@@ -14,4 +15,11 @@
   background-size: cover;
   background-position: center;
   height: 100vh;
+}
+.logo {
+  width: 140px;
+  position: absolute;
+  top: 4%;
+  left: 10%;
+  
 }
