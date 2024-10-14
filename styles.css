@@ -7,10 +7,18 @@
   --linear-gradient-one: linear-gradient(rgba(139, 69, 19, 0.5), rgba(255, 165, 0, 0.5));
   --linear-gradient-two: linear-gradient(rgba(0, 128, 128, 0.5), rgba(139, 69, 19, 0.5));
   --logo-font: font(bagel fat one);
+  --heading-one: 130px;
+
+  --h1-font-family: 'Kaushan Script', cursive;
+  --h1-font-weight: 400;
+
+  --primary-color: #fff;
+  --secondary-color: #000;
+  --background-color: #BFA6A0; 
   
 }
 
-#banner {
+#banner{
   background: var(--linear-gradient-two),url(images/banner.jpg);
   background-size: cover;
   background-position: center;
@@ -22,4 +30,60 @@
   top: 4%;
   left: 10%;
   
+}
+.banner-text{
+  text-align: center;
+  color: var(--primary-color);
+  padding-top: 180px;
+}
+.banner-text h1{
+  font-size: var(--heading-one);
+  font-family: var(--h1-font-family);
+  font-style: normal;
+  font-weight: var(--h1-font-weight);
+}
+.banner-text p{
+  font-size: 20px;
+  font-style: italic;
+}
+.banner-btn{
+  margin: 70px auto 0;
+}
+.banner-btn a{
+  width: 150px;
+  text-decoration: none;
+  display: inline-block;
+  margin: 0 10px;
+  padding: 12px 0;
+  color: var(--primary-color);
+  border : .5px solid var(--primary-color);
+  position: relative;
+  z-index: 1;
+  transition: color 0.5s;
+}
+.banner-btn a span{
+  width: 0%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: var(--primary-color);
+  z-index: -1;
+  transition: 0.5s;
+}
+.banner-btn a:hover span{
+  width: 100%;
+}
+.banner-btn a:hover{
+  color: var(--secondary-color);
+}
+
+#sideNav{
+  width: 120px;
+  height: 100vh;
+  position: fixed;
+  right: 0;
+  top: 0;
+  background: var(--background-color);
+  z-index: 2;
 }
