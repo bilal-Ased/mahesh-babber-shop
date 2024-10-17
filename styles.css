@@ -7,18 +7,21 @@
 
 :root {
   --linear-gradient-one: linear-gradient(rgba(139, 69, 19, 0.5), rgba(255, 165, 0, 0.5));
-  --linear-gradient-two: linear-gradient(rgba(0, 128, 128, 0.5), rgba(139, 69, 19, 0.5));
+  --linear-gradient-two: linear-gradient(rgba(0, 128, 128, 0.5), rgba(0, 0, 0, 0));
   --logo-font: font(bagel fat one);
   --heading-one: 130px;
   --heading-one-mobile: 44px;
 
   --h1-font-family: 'Kaushan Script', cursive;
   --h1-font-weight: 400;
+  --h1-font-size: 50px;
 
   --primary-color: #fff;
   --secondary-color: #000;
   --background-color: #BFA6A0; 
   --background-color-two: rgba(0, 128, 128, 0.5);
+
+  
   
 }
 
@@ -132,4 +135,36 @@ nav ul li  a{
 #feature{
   width: 100%;
   padding: 70px 0;
+}
+.title-text{
+  text-align: center;
+  padding-bottom: 70px;
+}
+.title-text p{
+  margin: auto;
+  font-size: 20px;
+  color: var(--background-color-two);
+  font-weight: bold;
+  position: relative;
+  z-index: 1;
+  display: inline-block;
+
+}
+.title-text p::after{
+  content:'';
+  width: 50px;
+  height: 35px;
+  position: absolute;
+  background: var(--linear-gradient-two);
+  top: -20px;
+  left: 0;
+  z-index: -1;
+  transform: rotate(10deg);
+  border-top-left-radius: 35px;
+  border-bottom-right-radius: 35px;
+
+}
+
+.title-text h1{
+  font-size: var(--h1-font-size);
 }
