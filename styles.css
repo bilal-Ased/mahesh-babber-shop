@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Poppins&display=swap');
 
 * {
   margin: 0;
@@ -21,7 +20,7 @@
   --background-color: #BFA6A0; 
   --background-color-two: rgba(0, 128, 128, 0.5);
 
-  
+  --default-font-family: 'Poppins', sans-serif;
   
 }
 
@@ -42,6 +41,7 @@
   text-align: center;
   color: var(--primary-color);
   padding-top: 180px;
+  font-family: var(--default-font-family);
 }
 .banner-text h1{
   font-size: var(--heading-one);
@@ -52,6 +52,7 @@
 .banner-text p{
   font-size: 20px;
   font-style: italic;
+  font-family: var(--default-font-family);
 }
 .banner-btn{
   margin: 70px auto 0;
@@ -94,10 +95,12 @@
   background: var(--background-color-two);
   z-index: 2;
   transition: 0.9s;
+  font-family: var(--default-font-family);
 }
 nav ul li{
   list-style: none;
   margin: 50px 20px;
+  font-family: var(--default-font-family);
 }
 nav ul li  a{
   text-decoration: none;
@@ -114,6 +117,7 @@ nav ul li  a{
   cursor: pointer;
   z-index: 3;
   text-align: center;
+  font-style: var(--default-font-family);
 }
 #menuBtn img{
   width: 20px;
@@ -135,10 +139,13 @@ nav ul li  a{
 #feature{
   width: 100%;
   padding: 70px 0;
+  font: var(--default-font-family);
+  font-family: var(--default-font-family);
 }
 .title-text{
   text-align: center;
   padding-bottom: 70px;
+  font-family: var(--default-font-family);
 }
 .title-text p{
   margin: auto;
@@ -148,6 +155,7 @@ nav ul li  a{
   position: relative;
   z-index: 1;
   display: inline-block;
+  font-family: var(--default-font-family);
 
 }
 .title-text p::after{
@@ -167,4 +175,50 @@ nav ul li  a{
 
 .title-text h1{
   font-size: var(--h1-font-size);
+  font-family: var(--default-font-family);
+}
+.features-box{
+  width: 80%;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  text-align: center;
+}
+.features{
+  flex-basis: 50%;
+}
+.features-img{
+  flex-basis: 50%;
+  margin: auto;
+}
+.features-img img{
+  width: 70%;
+  border-radius: 10px;
+}
+.features h1{
+  text-align: left;
+  margin-bottom: 10px;
+  font-weight: 100;
+  color: var(--background-color-two);
+  }
+.features-desc{
+  display: flex;
+  align-items: center;
+  margin-bottom: 40px;
+}
+.feature-icon .bx{
+  width: 50px;
+  height: 50px;
+  font-size: 30px;
+  line-height: 50px;
+  border-radius: 8px;
+  color: var(--background-color-two);
+  border: 1px solid var(--background-color-two);
+
+}
+.feature-text p{
+  font-family: var(--default-font-family);
+  padding: 0 20px;
+  text-align: initial;
 }
