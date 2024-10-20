@@ -10,6 +10,7 @@
   --logo-font: font(bagel fat one);
   --heading-one: 130px;
   --heading-one-mobile: 44px;
+  --heading-two-mobiule: 35px;
 
   --h1-font-family: 'Kaushan Script', cursive;
   --h1-font-weight: 400;
@@ -19,8 +20,12 @@
   --secondary-color: #000;
   --background-color: #BFA6A0; 
   --background-color-two: rgba(0, 128, 128, 0.5);
+  --background-color-three: #4682b4 ;
 
   --default-font-family: 'Poppins', sans-serif;
+
+  --serviceImg-width: 600px;
+  --serviceimg-height: 400px;
   
 }
 
@@ -221,4 +226,66 @@ nav ul li  a{
   font-family: var(--default-font-family);
   padding: 0 20px;
   text-align: initial;
+}
+@media screen and (max-width: 770px){
+  .title-text h1 {
+      font-size: var(--heading-two-mobiule);
+      font-family: var(--default-font-family);
+    }
+    .features{
+        flex-basis: 100%;
+     }
+    .features-img {
+      flex-basis: 100%;
+    }
+    .features-img img {
+      width: 100%;
+      border-radius: 10px;
+    }
+}
+
+/*--services--*/
+
+#service{
+  width: 100%;
+  padding: 70px 0;
+  background: var(--background-color-two);
+  font-family: var(--default-font-family);
+}
+.service-box{
+  width: 80%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: auto;
+}
+.single-service{
+  text-align: center;
+  border-radius: 7px;
+  margin-bottom: 20px;
+  flex-basis: 48%;
+  color: var(--primary-color);
+  position: relative;
+}
+.single-service img{
+  width: 100%;
+  border-radius: 7px;
+  height: auto;
+  object-fit: cover;
+  max-width: 100%;
+  max-height: 100%;
+}
+.overlay{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  border-radius: 7px;
+  cursor: pointer;
+  background: var(--linear-gradient-two);
+  opacity: 0;
+  transition: 1s;
+}
+.single-service:hover .overlay{
+  opacity: 1;
 }
