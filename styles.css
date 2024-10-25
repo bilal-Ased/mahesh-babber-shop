@@ -267,16 +267,14 @@ nav ul li  a{
   color: var(--primary-color);
   position: relative;
   
+  
 }
 .single-service img{
   width: 100%;
   border-radius: 7px;
   height: auto;
   object-fit: cover;
-  max-width: 100%;
-  max-height: 100%;
-  
-  
+  max-height: 365px;
 }
 .overlay{
   width: 100%;
@@ -287,8 +285,22 @@ nav ul li  a{
   cursor: pointer;
   background: var(--linear-gradient-two);
   opacity: 0;
-  transition: 1s;
+  transition: 2s;
 }
 .single-service:hover .overlay{
   opacity: 1;
+}
+.service-description{
+  width: 80%;
+  position: absolute;
+  bottom: 40%;
+  left: 50%;
+  transform: translateX(-50%)
+}
+hr{
+  background: var(--primary-color);
+  height: 2px;
+  border: 0;
+  margin: 15px auto;
+  width: 60%;
 }
