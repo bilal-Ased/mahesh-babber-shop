@@ -304,10 +304,3 @@ hr{
   margin: 15px auto;
   width: 60%;
 }
-hr {
-  background: var(--primary-color);
-  height: 2px;
-  border: 0;
-  margin: 15px auto;
-  width: 60%;
-}
