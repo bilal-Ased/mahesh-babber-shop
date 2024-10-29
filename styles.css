@@ -320,6 +320,7 @@ hr{
   }
     .service-description p{
       font-size: 12px;
+      font-family: var(--default-font-family);
     }
     hr{
       margin: 5px auto;
@@ -349,4 +350,9 @@ hr{
   border-radius: 5px;
   box-shadow: 0 10px 20px 3px var(--background-color-two);
   cursor: pointer;
+  font-family: var(--default-font-family);
+}
+.testimonial-column p{
+  font-size: 14px;
+  font-family: var(--default-font-family);
 }
