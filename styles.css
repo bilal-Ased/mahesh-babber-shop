@@ -293,9 +293,11 @@ nav ul li  a{
 .service-description{
   width: 80%;
   position: absolute;
-  bottom: 40%;
+  bottom: 0;
   left: 50%;
-  transform: translateX(-50%)
+  opacity: 0;
+  transform: translateX(-50%);
+  transition: 1s;
 }
 hr{
   background: var(--primary-color);
@@ -303,4 +305,48 @@ hr{
   border: 0;
   margin: 15px auto;
   width: 60%;
+}
+.service-description p{
+  font-size: 14px;
+}
+.single-service:hover .service-description{
+  bottom: 40%;
+  opacity: 1;
+}
+@media screen and (max-width: 770px){
+  .single-service{
+    flex-basis: 100%;
+    margin-bottom: 30px;
+  }
+    .service-description p{
+      font-size: 12px;
+    }
+    hr{
+      margin: 5px auto;
+    }
+    .single-service:hover .service-description {
+      bottom: 25% ima !important;
+      opacity: 1;
+    }
+}
+/* testimonials */
+#testimonial{
+  width: 100%;
+  padding: 70px auto; 
+}
+.testimonial-row{
+  width: 80%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+.testimonial-column{
+  flex-basis: 28%;
+  padding: 10px;
+  margin-bottom: 30px;
+  border-radius: 5px;
+  box-shadow: 0 10px 20px 3px var(--background-color-two);
+  cursor: pointer;
 }
