@@ -297,7 +297,7 @@ nav ul li  a{
   left: 50%;
   opacity: 0;
   transform: translateX(-50%);
-  transition: 1s;
+  transition:  1s;
 }
 hr{
   background: var(--primary-color);
@@ -351,8 +351,78 @@ hr{
   box-shadow: 0 10px 20px 3px var(--background-color-two);
   cursor: pointer;
   font-family: var(--default-font-family);
+  transition: transform .5s;
 }
 .testimonial-column p{
   font-size: 14px;
   font-family: var(--default-font-family);
+}
+.user{
+  display: flex;
+  align-items: center;
+  margin: 20px 0;
+}
+.user img{
+  width: 40px;
+  margin-right: 20px;
+  border-radius: 3px;
+}
+.user-info .bx{
+  margin-left: 10px;
+  color: #27c0ff;
+  font-size: 20px;
+}
+.user-info small{
+  color: var(--background-color-two);
+}
+.testimonial-column:hover{
+  transform: translateY(-10px);
+}
+@media screen and (max-width: 770px) {
+  .testimonial-column {
+    flex-basis: 100%;
+  }
+}
+
+/* Footer */
+#footer{
+  padding: 100px 0 20px;
+  background: var(--background-color-two);
+  font-family: var(--default-font-family);
+  position: relative;
+}
+.footer-row{
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.footer-left,.footer-right{
+  flex-basis: 45%;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+.footer-right {
+  text-align: right;
+}
+.footer-row h1{
+  margin: 10px 0;
+}
+.footer-row p{
+  margin: 10px 0;
+  line-height: 35px;
+}
+.footer-left .bx,.footer-right .bx{
+  font-size: 20px;
+  color: var(--background-color-two);
+  margin: 10px;
+}
+.footer-img{
+  max-width: 370px;
+  opacity: 0.1;
+  position: absolute;
+  left: 50%;
+  top: 35%;
+  transform: translate(-50%, -50%);
 }
