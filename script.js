@@ -25,6 +25,69 @@ function initializeLoading() {
     });
 }
 
+//services section 
+// Scroll-Based Animation on Service Cards
+const serviceCards = document.querySelectorAll('.service-card');
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('fade-in');
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.15 });
+
+serviceCards.forEach(card => observer.observe(card));
+
+// Button Ripple Effect on Click
+const buttons = document.querySelectorAll('.btn-book');
+
+buttons.forEach(button => {
+  button.addEventListener('click', function (e) {
+    const ripple = document.createElement('span');
+    ripple.classList.add('ripple');
+    ripple.style.left = `${e.clientX - e.target.offsetLeft}px`;
+    ripple.style.top = `${e.clientY - e.target.offsetTop}px`;
+    this.appendChild(ripple);
+
+    // Remove the ripple after animation
+    setTimeout(() => ripple.remove(), 600);
+  });
+});
+
+// Parallax Effect on Service Cards
+serviceCards.forEach(card => {
+  card.addEventListener('mousemove', (e) => {
+    const rect = card.getBoundingClientRect();
+    const x = (e.clientX - rect.left) / rect.width - 0.5;
+    const y = (e.clientY - rect.top) / rect.height - 0.5;
+
+    card.style.transform = `rotateX(${y * 10}deg) rotateY(${x * 10}deg)`;
+  });
+
+  card.addEventListener('mouseleave', () => {
+    card.style.transform = '';
+  });
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // Navigation
 function initializeNavigation() {
     const navToggle = document.querySelector('.nav-toggle');

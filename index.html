@@ -48,15 +48,6 @@
       <div class="logo-container">
         <img src="/images/icons/footerImg.png" alt="Mahesh Barber Shop Logo" class="logo" loading="lazy">
       </div>
-
-      <button class="theme-toggle" aria-label="Toggle Dark Mode">
-        <i class="fas fa-moon"></i>
-      </button>
-
-      <button class="nav-toggle" aria-label="Toggle Navigation">
-        <span class="hamburger"></span>
-      </button>
-
       <ul class="nav-menu" role="navigation">
         <li><a href="#home" class="nav-link">Home</a></li>
         <li><a href="#services" class="nav-link">Services</a></li>
@@ -65,33 +56,23 @@
         <li><a href="#about" class="nav-link">About</a></li>
         <li><a href="#contact" class="nav-link">Contact</a></li>
       </ul>
+
+      <div class="search-container">
+        <input type="text" placeholder="Search..." aria-label="Search">
+      </div>
+
     </nav>
+
   </header>
 
   <!-- Hero Section -->
   <section id="home" class="hero" role="banner">
     <div class="hero-content">
-      <h1 class="hero-title">Mahesh Barber Shop</h1>
+      <h1 class="hero-title">Mahesh Barber and Hair Salon</h1>
       <p class="hero-subtitle">Crafting Confidence Through Style</p>
 
       <div class="hero-cta">
-        <button class="btn btn-primary" data-booking-trigger>Book Appointment</button>
-        <button class="btn btn-secondary" data-virtual-try>Virtual Try-On</button>
-      </div>
-
-      <div class="hero-features">
-        <div class="feature-card">
-          <i class="fas fa-clock"></i>
-          <span>Quick Service</span>
-        </div>
-        <div class="feature-card">
-          <i class="fas fa-star"></i>
-          <span>Expert Stylists</span>
-        </div>
-        <div class="feature-card">
-          <i class="fas fa-shield-alt"></i>
-          <span>Hygienic</span>
-        </div>
+        <button class="btn btn-primary" data-booking-trigger href="#booking">Book Appointment</button>
       </div>
     </div>
 
@@ -113,66 +94,148 @@
       <!-- Service Cards -->
       <article class="service-card" data-aos="fade-up">
         <div class="service-image">
-          <img src="/api/placeholder/400/300" alt="Haircut Service" loading="lazy">
+          <img src="images/pic4.jpeg" alt="Haircut Service" loading="lazy">
         </div>
         <div class="service-content">
           <h3>Premium Haircut</h3>
           <p>Expert styling tailored to your features</p>
           <div class="service-price">
-            <span>From $25</span>
             <button class="btn btn-book">Book Now</button>
           </div>
         </div>
       </article>
-
+      <article class="service-card" data-aos="fade-up">
+        <div class="service-image">
+          <img src="/images/picTwo.jpg" alt="Haircut Service" loading="lazy">
+        </div>
+        <div class="service-content">
+          <h3>Premium Haircut</h3>
+          <p>Expert styling tailored to your features</p>
+          <div class="service-price">
+            <button class="btn btn-book">Book Now</button>
+          </div>
+        </div>
+      </article>
       <!-- More service cards following same structure -->
       <!-- Repeated for other services -->
     </div>
   </section>
 
-  <!-- Booking Section -->
-  <section id="booking" class="booking">
-    <div class="section-header">
-      <h2>Book Your Visit</h2>
-      <p>Schedule your next grooming session</p>
+
+
+
+
+
+<!-- Booking Section -->
+<section id="booking" class="booking">
+  <div class="section-header">
+    <h2>Book Your Visit</h2>
+    <p>Schedule your next grooming session</p>
+  </div>
+
+  <div class="booking-cards">
+    <!-- Working Days & Contact Card -->
+    <div class="card working-days">
+      <h3>Our Working Days ...</h3>
+      <ul>
+        <li>Monday - Friday: 9 AM - 8 PM</li>
+        <li>Saturday: 10 AM - 6 PM</li>
+        <li>Sunday: Closed</li>
+        <li>Public Holidays: Closed</li>
+      </ul>
+      <h4>Or Get In Touch!</h4>
+      <div class="contact-info">
+        <!-- <p>Phone: (123) 456-7890
+          <a href="https://wa.me/1234567890" target="_blank">
+            <img src="images/icons/whatsapp-brands-solid.svg" alt="WhatsApp" class="whatsapp-icon">
+          </a>
+        </p> -->
+
+        <ul>
+          <li><p>Whatsapp (123) 456-7890 : 
+            <a href="https://wa.me/1234567890" target="_blank">
+              <img src="images/icons/phone-volume-solid (1).svg" alt="WhatsApp" class="whatsapp-icon">
+            </a>
+          </p></li>
+          <li>
+            <p>Phonecall (123) 456-7890 :
+              <a href="https://wa.me/1234567890" target="_blank">
+                <img src="images/icons/whatsapp-brands-solid.svg" alt="WhatsApp" class="whatsapp-icon">
+              </a>
+            </p>
+          </li>
+        </ul>
+
+
+      </div>
     </div>
 
-    <form class="booking-form" id="bookingForm">
-      <div class="form-grid">
-        <div class="form-group">
-          <label for="service">Select Service</label>
-          <select id="service" name="service" required>
-            <option value="">Choose a service...</option>
-            <option value="haircut">Haircut</option>
-            <option value="beard">Beard Trim</option>
-            <option value="combo">Full Grooming</option>
-          </select>
+    <!-- Booking Form Card -->
+    <div class="card booking-form">
+      <h3>Booking Form</h3>
+      <form id="bookingForm">
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Your Phone</label>
+            <input type="tel" id="phone" name="phone" required>
+          </div>
+
+          <div class="form-group">
+            <label for="service">Select Service</label>
+            <select id="service" name="service" required>
+              <option value="">Choose a service...</option>
+              <option value="haircut">Haircut</option>
+              <option value="beard">Beard Trim</option>
+              <option value="combo">Full Grooming</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="stylist">Select Stylist</label>
+            <select id="stylist" name="stylist" required>
+              <option value="">Choose a stylist...</option>
+              <option value="john">John</option>
+              <option value="mike">Mike</option>
+              <option value="sarah">Sarah</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="date">Select Date</label>
+            <div class="input-icon-wrapper">
+              <input type="date" id="date" name="date" required>
+              <img src="images/icons/calendar-days-solid.svg" alt="Calendar Icon" class="input-icon">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="time">Select Time</label>
+            <div class="input-icon-wrapper">
+              <input type="time" id="time" name="time" required>
+              <img src="images/icons/clock-regular.svg" alt="Clock Icon" class="input-icon">
+            </div>
+          </div>
         </div>
 
-        <div class="form-group">
-          <label for="stylist">Select Stylist</label>
-          <select id="stylist" name="stylist" required>
-            <option value="">Choose a stylist...</option>
-            <option value="john">John</option>
-            <option value="mike">Mike</option>
-            <option value="sarah">Sarah</option>
-          </select>
-        </div>
+        <button type="submit" class="btn btn-primary">Confirm Booking</button>
+      </form>
+    </div>
+  </div>
+</section>
 
-        <div class="form-group">
-          <label for="date">Select Date</label>
-          <input type="date" id="date" name="date" required>
-        </div>
 
-        <div class="form-group">
-          <label for="time">Select Time</label>
-          <input type="time" id="time" name="time" required>
-        </div>
-      </div>
+  
 
-      <button type="submit" class="btn btn-primary">Confirm Booking</button>
-    </form>
-  </section>
+
+
+
+
+ 
 
   <!-- Gallery Section -->
   <section id="gallery" class="gallery">
@@ -191,7 +254,23 @@
     <div class="gallery-grid">
       <!-- Gallery Items -->
       <div class="gallery-item" data-category="haircuts">
-        <img src="/api/placeholder/300/300" alt="Haircut Style" loading="lazy">
+        <img src="/images/picFour.webp" alt="Haircut Style" loading="lazy">
+        <div class="gallery-overlay">
+          <h4>Modern Fade</h4>
+          <p>Classic meets contemporary</p>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-category="beard">
+        <img src="/images/barber-man.jpg" alt="Haircut Style" loading="lazy">
+        <div class="gallery-overlay">
+          <h4>Modern Fade</h4>
+          <p>Classic meets contemporary</p>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-category="styling">
+        <img src="/images/image2.png" alt="Haircut Style" loading="lazy">
         <div class="gallery-overlay">
           <h4>Modern Fade</h4>
           <p>Classic meets contemporary</p>
@@ -329,13 +408,11 @@
   <!-- Toast Notifications -->
   <div class="toast-container"></div>
 
-  <!-- Back to Top Button -->
-  <button class="back-to-top" aria-label="Back to Top">
-    <i class="fas fa-arrow-up"></i>
-  </button>
+
 
   <!-- Scripts -->
   <script type="module" src="script.js"></script>
+  <script src="https://kit.fontawesome.com/5af1316d11.js" crossorigin="anonymous"></script>
 </body>
 
 </html>
