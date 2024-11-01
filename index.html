@@ -1,215 +1,341 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Barber Shop</title>
-  <link rel="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.6.0/css/fontawesome.min.css" href="stylesheet">
-  <link rel="stylesheet" href="styles.css">
-  <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Poppins&display=swap" rel="stylesheet">
-  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Mahesh Barber Shop - Premier hair styling and grooming services in Nairobi">
+  <meta name="keywords" content="barber, haircut, styling, grooming, beard trim, Nairobi">
+  <meta name="author" content="Mahesh Barber Shop">
+  <meta name="theme-color" content="#BFA6A0">
 
-  
+  <!-- Open Graph Tags -->
+  <meta property="og:title" content="Mahesh Barber Shop">
+  <meta property="og:description" content="Premium barbering services in Nairobi">
+  <meta property="og:image" content="/api/placeholder/1200/630">
+  <meta property="og:url" content="https://maheshbarbershop.co.ke">
+
+  <title>Mahesh Barber Shop | Premium Grooming</title>
+
+  <!-- Preload Critical Resources -->
+  <link rel="preload" href="styles.css" as="style">
+  <link rel="preload" href="script.js" as="script">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="images/footerImg.png">
+  <link rel="apple-touch-icon" href="/images/icons/favicon.svg">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Kaushan+Script&display=swap"
+    rel="stylesheet">
 </head>
+
 <body>
-  <section id="banner">
-    <img src="images/mahesh-hair-salon-high-resolution-logo-white-transparent.png" alt="" class="logo">
-    <div class="banner-text">
-      <h1>Mahesh Barber Shop</h1>
-      <p>Style your Hair Style your Life</p>
-      <div class="banner-btn">
-        <a href="#"><span></span>Find Out</a>
-        <a href="#"><span></span>Read More</a>
+  <!-- Loading Screen -->
+  <div class="loading-screen">
+    <div class="loader"></div>
+  </div>
+
+  <!-- Accessibility Skip Link -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Header -->
+  <header class="header" data-header>
+    <nav class="nav-container">
+      <div class="logo-container">
+        <img src="/images/icons/footerImg.png" alt="Mahesh Barber Shop Logo" class="logo" loading="lazy">
       </div>
 
-    </div>
-  </section>
-  <div id="sideNav">
-    <nav>
-      <ul>
-        <li><a href="#">HOME</a></li>
-        <li><a href="#">FEATURES</a></li>
-        <li><a href="#">SERVICES</a></li>
-        <li><a href="#">TESTIMONIALS</a></li>
-        <li><a href="#">CONTACT US</a></li>
+      <button class="theme-toggle" aria-label="Toggle Dark Mode">
+        <i class="fas fa-moon"></i>
+      </button>
+
+      <button class="nav-toggle" aria-label="Toggle Navigation">
+        <span class="hamburger"></span>
+      </button>
+
+      <ul class="nav-menu" role="navigation">
+        <li><a href="#home" class="nav-link">Home</a></li>
+        <li><a href="#services" class="nav-link">Services</a></li>
+        <li><a href="#booking" class="nav-link">Book Now</a></li>
+        <li><a href="#gallery" class="nav-link">Gallery</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
       </ul>
     </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero" role="banner">
+    <div class="hero-content">
+      <h1 class="hero-title">Mahesh Barber Shop</h1>
+      <p class="hero-subtitle">Crafting Confidence Through Style</p>
+
+      <div class="hero-cta">
+        <button class="btn btn-primary" data-booking-trigger>Book Appointment</button>
+        <button class="btn btn-secondary" data-virtual-try>Virtual Try-On</button>
+      </div>
+
+      <div class="hero-features">
+        <div class="feature-card">
+          <i class="fas fa-clock"></i>
+          <span>Quick Service</span>
+        </div>
+        <div class="feature-card">
+          <i class="fas fa-star"></i>
+          <span>Expert Stylists</span>
+        </div>
+        <div class="feature-card">
+          <i class="fas fa-shield-alt"></i>
+          <span>Hygienic</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-background">
+      <div class="shape shape-1"></div>
+      <div class="shape shape-2"></div>
+      <div class="shape shape-3"></div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="services">
+    <div class="section-header">
+      <h2>Our Services</h2>
+      <p>Premium grooming services for the modern gentleman</p>
+    </div>
+
+    <div class="services-grid">
+      <!-- Service Cards -->
+      <article class="service-card" data-aos="fade-up">
+        <div class="service-image">
+          <img src="/api/placeholder/400/300" alt="Haircut Service" loading="lazy">
+        </div>
+        <div class="service-content">
+          <h3>Premium Haircut</h3>
+          <p>Expert styling tailored to your features</p>
+          <div class="service-price">
+            <span>From $25</span>
+            <button class="btn btn-book">Book Now</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- More service cards following same structure -->
+      <!-- Repeated for other services -->
+    </div>
+  </section>
+
+  <!-- Booking Section -->
+  <section id="booking" class="booking">
+    <div class="section-header">
+      <h2>Book Your Visit</h2>
+      <p>Schedule your next grooming session</p>
+    </div>
+
+    <form class="booking-form" id="bookingForm">
+      <div class="form-grid">
+        <div class="form-group">
+          <label for="service">Select Service</label>
+          <select id="service" name="service" required>
+            <option value="">Choose a service...</option>
+            <option value="haircut">Haircut</option>
+            <option value="beard">Beard Trim</option>
+            <option value="combo">Full Grooming</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="stylist">Select Stylist</label>
+          <select id="stylist" name="stylist" required>
+            <option value="">Choose a stylist...</option>
+            <option value="john">John</option>
+            <option value="mike">Mike</option>
+            <option value="sarah">Sarah</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="date">Select Date</label>
+          <input type="date" id="date" name="date" required>
+        </div>
+
+        <div class="form-group">
+          <label for="time">Select Time</label>
+          <input type="time" id="time" name="time" required>
+        </div>
+      </div>
+
+      <button type="submit" class="btn btn-primary">Confirm Booking</button>
+    </form>
+  </section>
+
+  <!-- Gallery Section -->
+  <section id="gallery" class="gallery">
+    <div class="section-header">
+      <h2>Style Gallery</h2>
+      <p>Showcase of our finest work</p>
+    </div>
+
+    <div class="gallery-filter">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="haircuts">Haircuts</button>
+      <button class="filter-btn" data-filter="beard">Beard</button>
+      <button class="filter-btn" data-filter="styling">Styling</button>
+    </div>
+
+    <div class="gallery-grid">
+      <!-- Gallery Items -->
+      <div class="gallery-item" data-category="haircuts">
+        <img src="/api/placeholder/300/300" alt="Haircut Style" loading="lazy">
+        <div class="gallery-overlay">
+          <h4>Modern Fade</h4>
+          <p>Classic meets contemporary</p>
+        </div>
+      </div>
+      <!-- More gallery items -->
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section id="testimonials" class="testimonials">
+    <div class="section-header">
+      <h2>Client Reviews</h2>
+      <p>What our customers say about us</p>
+    </div>
+
+    <div class="testimonials-slider">
+      <div class="testimonial-card">
+        <div class="testimonial-image">
+          <img src="/api/placeholder/80/80" alt="Client" loading="lazy">
+        </div>
+        <div class="testimonial-content">
+          <p>"Exceptional service and attention to detail. Best barbershop in town!"</p>
+          <h4>John Doe</h4>
+          <span>Regular Customer</span>
+        </div>
+      </div>
+      <!-- More testimonials -->
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact">
+    <div class="section-header">
+      <h2>Get in Touch</h2>
+      <p>We'd love to hear from you</p>
+    </div>
+
+    <div class="contact-grid">
+      <div class="contact-info">
+        <div class="info-card">
+          <i class="fas fa-map-marker-alt"></i>
+          <h4>Location</h4>
+          <p>#30 South C, Nairobi City Kenya</p>
+        </div>
+
+        <div class="info-card">
+          <i class="fas fa-phone"></i>
+          <h4>Phone</h4>
+          <p>+254710999222</p>
+        </div>
+
+        <div class="info-card">
+          <i class="fas fa-envelope"></i>
+          <h4>Email</h4>
+          <p>info@maheshbarbershop.co.ke</p>
+        </div>
+
+        <div class="info-card">
+          <i class="fas fa-clock"></i>
+          <h4>Working Hours</h4>
+          <p>Mon-Fri: 9am - 9pm</p>
+          <p>Sat-Sun: 8am - 11pm</p>
+        </div>
+      </div>
+
+      <form class="contact-form">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" required></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-info">
+        <img src="/api/placeholder/140/50" alt="Mahesh Barber Shop Logo" class="footer-logo">
+        <p>Premium grooming services for the modern gentleman</p>
+        <div class="social-links">
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#booking">Book Now</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-newsletter">
+        <h4>Newsletter</h4>
+        <p>Subscribe for updates and offers</p>
+        <form class="newsletter-form">
+          <input type="email" placeholder="Your email" required>
+          <button type="submit" class="btn btn-primary">Subscribe</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2024 Mahesh Barber Shop. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Modals -->
+  <div class="modal booking-modal" id="bookingModal">
+    <!-- Booking modal content -->
   </div>
-  <div id="menuBtn">
-    <img src="images/menu-regular-240.png" id="menu">
+
+  <div class="modal virtual-try-modal" id="virtualTryModal">
+    <!-- Virtual try-on modal content -->
   </div>
 
-  <!--Features-->
+  <!-- Toast Notifications -->
+  <div class="toast-container"></div>
 
-  <section id="feature">
-    <div class="title-text">
-      <p>FEATURES</p>
-      <h1>Why Choose Mahesh Barber Shop </h1>
-    </div>
-    <div class="features-box">
-      <div class="features">
-        <h1>Experienced Staff</h1>
-        <div class="features-desc">
-          <div class="feature-icon">
-            <i class="fa fa-shield" ></i>
-            <box-icon name='shield-quarter'></box-icon>
-            <i class='bx bx-shield-quarter'></i>
-          </div>
-          <div class="feature-text">
-            <p>
-              Expert cuts, personalized service, and a welcoming atmosphere—elevate your style at Mahesh Barber Shop
-            </p>
-          </div>
-        </div>
-        <h1>Pre Booking Online </h1>
-        <div class="features-desc">
-          <div class="feature-icon">
-            <i class='bx bx-calendar-check'></i>
-          </div>
-          <div class="feature-text">
-            <p>
-              Save time—book your appointment online and secure your spot with ease at Mahesh Barber Shop
-            </p>
-          </div>
-        </div>
-        <h1>Affordable Cost</h1>
-        <div class="features-desc">
-          <div class="feature-icon">
-            <i class='bx bx-money-withdraw'></i>
-          </div>
-          <div class="feature-text">
-            <p>
-              Top-quality grooming at prices that suit your budget—experience the best without breaking the bank
-            </p>
-          </div>
-        </div>
-      </div>
-      <div class="features-img">
-        <img src="images/barber-man.jpg" alt="">
-      </div>
-    </div>
-  </section>
+  <!-- Back to Top Button -->
+  <button class="back-to-top" aria-label="Back to Top">
+    <i class="fas fa-arrow-up"></i>
+  </button>
 
-  <!--Services-->
-  <section id="service">
-    <div class="title-text">
-      <p>Services</p>
-      <h1>We Provide The Best!</h1>
-    </div>
-    <div class="service-box">
-      <div class="single-service">
-        <img src="images/compressed-images/picture_one.jpg" class="service-img">
-        <div class="overlay"></div>
-        <div class="service-description">
-          <h3>Hair Styling</h3>
-          <hr>
-          <p>Expert styling tailored to your look. Fresh, modern, and perfect for any occasion.</p>
-        </div>
-      </div>
-      <div class="single-service">
-        <img src="images/compressed-images/picTwo.jpg" class="service-img">
-        <div class="overlay"></div>
-        <div class="service-description">
-          <h3>Beard Trim</h3>
-          <hr>
-          <p>Refine your look with a precision beard trim for a sharp and polished appearance.</p>
-        </div>
-      </div>
-      <div class="single-service">
-        <img src="images/compressed-images/picThree.jpg" class="service-img">
-        <div class="overlay"></div>
-        <div class="service-description">
-          <h3>Bespoke Hair Cut</h3>
-          <hr>
-          <p>Revitalize your style with a professional haircut that enhances your features.</p>
-        </div>
-      </div>
-      <div class="single-service">
-        <img src="images/pic4.jpeg" class="service-img">
-        <div class="overlay"></div>
-        <div class="service-description">
-          <h3>Scalp Care</h3>
-          <hr>
-          <p>Indulge in a rejuvenating scalp treatment that cleanses and revitalizes.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-  
-  <!--Testimonials-->
-  <section id="testimonial">
-    <div class="title-text">
-      <p>Testimonials</p>
-      <h1>What Our Customers Say!</h1>
-    </div>
-    <div class="testimonial-row">
-      <div class="testimonial-column">
-        <div class="user">
-          <img src="images/image3.png" >
-          <div class="user-info">
-            <h4>Bilal Ased</h4>
-            <i class='bx bxl-twitter'></i>
-            <small>@bilalAsed</small>
-          </div>
-        </div>
-        <p>I absolutely love the service at Mahesh Barber Shop! The team really knows how to bring my style to life. It’s my go-to
-        place for a fresh cut!
-      </p>
-      </div>
-      <div class="testimonial-column">
-        <div class="user">
-          <img src="images/img4.jpeg">
-          <div class="user-info">
-            <h4>Mike Alfred</h4>
-            <i class='bx bxl-twitter'></i>
-            <small>@mike_alfred</small>
-          </div>
-        </div>
-        <p>Exceptional experience! The staff is professional, the environment is clean, and I always walk out looking my best.
-         </p>
-      </div>
-      <div class="testimonial-column">
-        <div class="user">
-          <img src="images/image1.jpg">
-          <div class="user-info">
-            <h4>Rajul Shah</h4>
-            <i class='bx bxl-twitter'></i>
-            <small>@rajulshah</small>
-          </div>
-        </div>
-        <p>Mahesh Barber Shop is top-notch! They’re skilled, welcoming, and pay attention to every detail. I wouldn’t trust my look
-        to anyone else!</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Website Footer  -->
-   <section id="footer">
-    <img src="images/footerImg.png" class="footer-img">
-    <div class="title-text">
-      <p>Contact Us</p>
-      <h1>Pay Us A Visit</h1>
-    </div>
-    <div class="footer-row">
-      <div class="footer-left">
-        <h1>Opening Hours</h1>
-        <p><i class='bx bxs-watch'></i>Monday to Friday - 9am to 9pm</p>
-        <p><i class='bx bxs-watch'></i>Saturday to Sunday  - 8am to 11pm</p>
-      </div>
-      <div class="footer-right">
-        <h1>Get In Touch</h1>
-        <p>#30 South C, Nairobi City Kenya<i class='bx bxs-map'></i></p>
-        <p>info@maheshbarbershop.co.ke <i class='bx bx-paper-plane'></i></p>
-        <p>+254710999222 <i class='bx bxs-phone-call'></i></p>
-      </div>
-    </div>
-
-
-   </section>
-
-
-
-  <script src="script.js"></script>
-  
+  <!-- Scripts -->
+  <script type="module" src="script.js"></script>
 </body>
+
 </html>

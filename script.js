@@ -1,17 +1,311 @@
-var menuBtn = document.getElementById("menuBtn")
-var sideNav = document.getElementById("sideNav")
-var menu = document.getElementById("menu")
+// Wait for DOM to load
+document.addEventListener('DOMContentLoaded', () => {
+    // Initialize components
+    initializeLoading();
+    initializeNavigation();
+    initializeThemeToggle();
+    initializeBookingSystem();
+    initializeGallery();
+    initializeTestimonials();
+    initializeScrollEffects();
+    initializeFormValidation();
+    initializeToasts();
+});
 
-sideNav.style.right = "-250px"
-
-menuBtn.onclick = function(){
-  if (sideNav.style.right == "-250px"){
-    sideNav.style.right = "0";
-    menu.src = "images/x-regular-240.png";
-  } 
-  else {
-    sideNav.style.right = "-250px";
-    menu.src = "images/menu-regular-240.png";
-  }
-  
+// Loading Screen
+function initializeLoading() {
+    const loader = document.querySelector('.loading-screen');
+    window.addEventListener('load', () => {
+        setTimeout(() => {
+            loader.style.opacity = '0';
+            setTimeout(() => {
+                loader.style.display = 'none';
+            }, 500);
+        }, 1000);
+    });
 }
+
+// Navigation
+function initializeNavigation() {
+    const navToggle = document.querySelector('.nav-toggle');
+    const navMenu = document.querySelector('.nav-menu');
+    const header = document.querySelector('.header');
+    
+    // Toggle mobile menu
+    navToggle?.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+    });
+
+    // Smooth scroll for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+                // Close mobile menu if open
+                navMenu.classList.remove('active');
+            }
+        });
+    });
+
+    // Header scroll effect
+    let lastScroll = 0;
+    window.addEventListener('scroll', () => {
+        const currentScroll = window.pageYOffset;
+        if (currentScroll > lastScroll && currentScroll > 100) {
+            header.style.transform = 'translateY(-100%)';
+        } else {
+            header.style.transform = 'translateY(0)';
+        }
+        lastScroll = currentScroll;
+    });
+}
+
+// Theme Toggle
+function initializeThemeToggle() {
+    const themeToggle = document.querySelector('.theme-toggle');
+    const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+    
+    // Set initial theme
+    if (localStorage.getItem('theme') === 'dark' || 
+        (!localStorage.getItem('theme') && prefersDarkScheme.matches)) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        themeToggle.querySelector('i').classList.replace('fa-moon', 'fa-sun');
+    }
+
+    themeToggle?.addEventListener('click', () => {
+        const currentTheme = document.documentElement.getAttribute('data-theme');
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        
+        document.documentElement.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+        
+        const icon = themeToggle.querySelector('i');
+        icon.classList.toggle('fa-moon');
+        icon.classList.toggle('fa-sun');
+    });
+}
+
+// Booking System
+function initializeBookingSystem() {
+    const bookingForm = document.getElementById('bookingForm');
+    const bookingModal = document.getElementById('bookingModal');
+    const virtualTryModal = document.getElementById('virtualTryModal');
+    const virtualTryButton = document.querySelector('[data-virtual-try]');
+    
+    bookingForm?.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        
+        // Get form data
+        const formData = new FormData(bookingForm);
+        const bookingData = Object.fromEntries(formData.entries());
+        
+        try {
+            // Validate booking data
+            if (!validateBookingData(bookingData)) {
+                throw new Error('Please fill all required fields');
+            }
+            
+            // Simulate API call
+            await new Promise(resolve => setTimeout(resolve, 1000));
+            
+            // Show success message
+            showToast('Booking confirmed successfully!', 'success');
+            bookingForm.reset();
+        } catch (error) {
+            showToast(error.message || 'Failed to book appointment. Please try again.', 'error');
+        }
+    });
+
+    // Virtual Try-On Feature
+    virtualTryButton?.addEventListener('click', () => {
+        virtualTryModal.style.display = 'flex';
+    });
+
+    // Close modals when clicking outside
+    window.addEventListener('click', (e) => {
+        if (e.target === bookingModal) {
+            bookingModal.style.display = 'none';
+        }
+        if (e.target === virtualTryModal) {
+            virtualTryModal.style.display = 'none';
+        }
+    });
+}
+
+// Form Validation
+function validateBookingData(data) {
+    const requiredFields = ['service', 'stylist', 'date', 'time'];
+    return requiredFields.every(field => data[field] && data[field].trim() !== '');
+}
+
+// Gallery
+function initializeGallery() {
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const galleryItems = document.querySelectorAll('.gallery-item');
+    
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            // Update active button
+            filterBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            
+            // Filter gallery items
+            const filter = btn.dataset.filter;
+            galleryItems.forEach(item => {
+                if (filter === 'all' || item.dataset.category === filter) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        });
+    });
+
+    // Initialize lightbox for gallery items
+    galleryItems.forEach(item => {
+        item.addEventListener('click', () => {
+            const img = item.querySelector('img');
+            if (img) {
+                openLightbox(img.src, item.querySelector('h4')?.textContent);
+            }
+        });
+    });
+}
+
+// Lightbox
+function openLightbox(src, caption) {
+    const lightbox = document.createElement('div');
+    lightbox.className = 'lightbox';
+    lightbox.innerHTML = `
+        <div class="lightbox-content">
+            <img src="${src}" alt="${caption || ''}" />
+            ${caption ? `<p>${caption}</p>` : ''}
+            <button class="lightbox-close">&times;</button>
+        </div>
+    `;
+    
+    document.body.appendChild(lightbox);
+    document.body.style.overflow = 'hidden';
+    
+    lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox || e.target.className === 'lightbox-close') {
+            document.body.removeChild(lightbox);
+            document.body.style.overflow = '';
+        }
+    });
+}
+
+// Testimonials Slider
+function initializeTestimonials() {
+    const testimonials = document.querySelector('.testimonials-slider');
+    let isDown = false;
+    let startX;
+    let scrollLeft;
+
+    if (testimonials) {
+        testimonials.addEventListener('mousedown', (e) => {
+            isDown = true;
+            testimonials.classList.add('active');
+            startX = e.pageX - testimonials.offsetLeft;
+            scrollLeft = testimonials.scrollLeft;
+        });
+
+        testimonials.addEventListener('mouseleave', () => {
+            isDown = false;
+            testimonials.classList.remove('active');
+        });
+
+        testimonials.addEventListener('mouseup', () => {
+            isDown = false;
+            testimonials.classList.remove('active');
+        });
+
+        testimonials.addEventListener('mousemove', (e) => {
+            if (!isDown) return;
+            e.preventDefault();
+            const x = e.pageX - testimonials.offsetLeft;
+            const walk = (x - startX) * 2;
+            testimonials.scrollLeft = scrollLeft - walk;
+        });
+
+        // Auto scroll
+        let scrollInterval;
+        const startAutoScroll = () => {
+            scrollInterval = setInterval(() => {
+                testimonials.scrollLeft += 2;
+                if (testimonials.scrollLeft >= testimonials.scrollWidth - testimonials.clientWidth) {
+                    testimonials.scrollLeft = 0;
+                }
+            }, 50);
+        };
+
+        const stopAutoScroll = () => {
+            clearInterval(scrollInterval);
+        };
+
+        testimonials.addEventListener('mouseenter', stopAutoScroll);
+        testimonials.addEventListener('mouseleave', startAutoScroll);
+        startAutoScroll();
+    }
+}
+
+// Toast Notifications
+function showToast(message, type = 'info') {
+    const toast = document.createElement('div');
+    toast.className = `toast toast-${type}`;
+    toast.textContent = message;
+    
+    const container = document.querySelector('.toast-container');
+    container.appendChild(toast);
+    
+    // Animate in
+    requestAnimationFrame(() => {
+        toast.style.opacity = '1';
+        toast.style.transform = 'translateY(0)';
+    });
+    
+    // Remove after delay
+    setTimeout(() => {
+        toast.style.opacity = '0';
+        toast.style.transform = 'translateY(100%)';
+        setTimeout(() => {
+            container.removeChild(toast);
+        }, 300);
+    }, 3000);
+}
+
+// Newsletter Form
+function initializeNewsletterForm() {
+    const form = document.querySelector('.newsletter-form');
+    form?.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const email = form.querySelector('input[type="email"]').value;
+        
+        try {
+            // Simulate API call
+            await new Promise(resolve => setTimeout(resolve, 1000));
+            showToast('Successfully subscribed to newsletter!', 'success');
+            form.reset();
+        } catch (error) {
+            showToast('Failed to subscribe. Please try again.', 'error');
+        }
+    });
+}
+
+// Initialize all components
+window.addEventListener('load', () => {
+    initializeNewsletterForm();
+});
+
+// Export for module usage
+export {
+    showToast,
+    initializeBookingSystem,
+    initializeGallery,
+    initializeTestimonials
+};
