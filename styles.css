@@ -702,42 +702,6 @@ h6 {
   }
 }
 
-/* Booking section */
-/* Booking Section */
-/* .booking {
-  padding: 60px 20px;
-  color: var(--text-color);
-  background: var(--primary-light);
-  /* Light background for contrast */
-
-
-/* .section-header {
-  text-align: center;
-  margin-bottom: 40px;
-}
-
-.section-header h2 {
-  font-size: 2.5rem;
-  font-weight: bold;
-  color: var(--primary-dark);
-}
-
-/* Cards Layout */
-
-/* .contact-info {
-  margin-top: 20px;
-}
-
-.contact-info a {
-  color: var(--primary-color);
-  text-decoration: none;
-}
-
-.contact-info a:hover {
-  text-decoration: underline;
-} */
-/* Booking Section Container */
-
 /* Booking Section Styles */
 .booking {
   padding: 4rem 2rem;
@@ -979,7 +943,23 @@ input[type="time"]::-webkit-calendar-picker-indicator {
     font-size: 2rem;
   }
 }
+.section-header {
+  text-align: center;
+  margin-bottom: 4rem;
+  position: relative;
+}
 
+.section-header::after {
+  content: '';
+  position: absolute;
+  bottom: -1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: var(--gradient-primary);
+  border-radius: 3px;
+}
 @media (max-width: 480px) {
   .booking {
     padding: 2rem 1rem;
@@ -1000,18 +980,8 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 }
 
 
-
-
-
-
-
-
-
-
-
-
 /* Enhanced Gallery Section */
-.gallery {
+/* .gallery {
   padding: 8rem 0;
   background: var(--background-color);
 }
@@ -1047,7 +1017,7 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 .gallery-item:hover img {
   transform: scale(1.1);
 }
-/* Gallery Filters */
+
 .gallery-filters {
   display: flex;
   justify-content: center;
@@ -1068,7 +1038,45 @@ input[type="time"]::-webkit-calendar-picker-indicator {
   background: var(--gradient-primary);
   color: white;
   border-radius: var(--border-radius);
+} */
+
+/* carousel */
+.carousel{
+  width: 100vw;
+  height:100vh;
+  overflow: hidden;
+  /* move the image to section header */
+   margin-top: -155px;
+   position: relative;
 }
+.carousel .list .item{
+  position: absolute;
+  inset: 0 0 0 0;
+  
+}
+.carousel .list .item img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  
+}
+.carousel .list .item .content{
+  position: absolute;
+  top: 20%;
+  width: 1140px;
+  max-width: 80%;
+  left: 50%;
+  transform: translateX(-50%);
+
+
+}
+
+
+
+
+
+
+
 
 
 
@@ -1163,23 +1171,7 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 }
 
 /* Enhanced Utility Classes */
-.section-header {
-  text-align: center;
-  margin-bottom: 4rem;
-  position: relative;
-}
 
-.section-header::after {
-  content: '';
-  position: absolute;
-  bottom: -1rem;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 60px;
-  height: 3px;
-  background: var(--gradient-primary);
-  border-radius: 3px;
-}
 /* Add these new styles to match HTML structure */
 
 /* Quick Features Section */
@@ -1251,13 +1243,6 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 
 .newsletter-form input {
   flex: 1;
-}
-
-/* Virtual Try-On Section */
-.virtual-tryon {
-  padding: 4rem 0;
-  background: var(--gradient-accent);
-  text-align: center;
 }
 
 /* Working Hours */
