@@ -16,6 +16,7 @@
   --border-radius: 12px;
   --box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
   --text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  --text-shadow-gallery: 0 5px 10px #0004;
 
 /* Header variables */
 --header-bg: #2c3e50;
@@ -1069,16 +1070,50 @@ input[type="time"]::-webkit-calendar-picker-indicator {
   transform: translateX(-50%);
   padding-right: 30%;
   box-sizing: border-box;
-  color: var(--primary-dark);
-  text-shadow: var(--text-shadow);
+  color: var(--background-color);
+  text-shadow: var(--text-shadow-gallery);
 }
-.carousel .list .item .content .model  h3{
+.carousel .list .item .content .category{
+  font-weight: bold;
+  letter-spacing: 10px;
+  font-size: 0.5rem;
+}
+.carousel .list .item .content .title  h3{
   font-size: 1.5rem;
-  color: var(--primary-dark);
+  color: var(--text-color);
   margin-bottom: 0.5rem;
-  text-shadow: var(--text-shadow);
+  text-shadow: var(--text-shadow-gallery);
+  line-height: 1.3rem;
 }
-
+.carousel .list .item .content .topic {
+  color: var(--primary-dark);
+  font-size: 1.5rem;
+  font-weight: bold;
+  line-height: 1.3rem;
+}
+.carousel .list .item .content .buttons{
+  display: grid;
+  grid-template-rows: 30px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 5px;
+  margin-top: 10px;
+  align-items: center;
+ 
+  
+}
+.carousel .list .item .content .buttons .btn-primary{
+  border: 1px solid var(--background-color);
+  width: span 1;
+  color: var(--background-color);
+  font-family: Poppins;
+  letter-spacing: 3px;
+  background: none;
+  height: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
 
 
 
