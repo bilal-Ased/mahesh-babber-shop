@@ -1069,11 +1069,14 @@ input[type="time"]::-webkit-calendar-picker-indicator {
   transform: translateX(-50%);
   padding-right: 30%;
   box-sizing: border-box;
-  color: var(--background-color);
-  text-shadow: 0 5px 18px;
+  color: var(--primary-dark);
+  text-shadow: var(--text-shadow);
 }
-.carousel.list .item .content .author{
-  
+.carousel .list .item .content .model  h3{
+  font-size: 1.5rem;
+  color: var(--primary-dark);
+  margin-bottom: 0.5rem;
+  text-shadow: var(--text-shadow);
 }
 
 
