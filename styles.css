@@ -1239,7 +1239,26 @@ animation-delay: 1.7s;
     border-radius: 0;
   }
 }
-
+.carousel.next .list .item:nth-last-child(1){
+  width: 0;
+  overflow: hidden;
+  animation: showThumbnail 0.8s linear 1 forwards;
+}
+@keyframes showThumbnails{
+  to{
+    width: 150px;
+  }
+}
+.carousel.next .thumbnail{
+  transform: translateX(150px);
+  animation: transformThumbnail .8s linear 1 forwards;
+}
+@keyframes transformThumbnail {
+  to{
+    transform: translateX(0);
+  }
+  
+}
 
 
 
