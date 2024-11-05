@@ -12,11 +12,12 @@
   --gradient-primary: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
   --gradient-accent: linear-gradient(135deg, var(--accent-color), var(--primary-light));
   --header-height: 80px;
-  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   --border-radius: 12px;
   --box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
   --text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
   --text-shadow-gallery: 0 5px 10px #0004;
+  --pop--textcolor: #f1683a;
 
 /* Header variables */
 --header-bg: #2c3e50;
@@ -1042,6 +1043,9 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 } */
 
 /* carousel */
+.section-header p{
+  color: var(--pop--textcolor);
+}
 .carousel{
   width: 100vw;
   height:100vh;
@@ -1086,7 +1090,7 @@ input[type="time"]::-webkit-calendar-picker-indicator {
   line-height: 1.3rem;
 }
 .carousel .list .item .content .topic {
-  color: var(--primary-dark);
+  color: var(--pop--textcolor);
   font-size: 1.5rem;
   font-weight: bold;
   line-height: 1.3rem;
@@ -1108,12 +1112,56 @@ input[type="time"]::-webkit-calendar-picker-indicator {
   font-family: Poppins;
   letter-spacing: 3px;
   background: none;
-  height: 10px;
+  height: 35px;
   display: flex;
   align-items: center;
   justify-content: center;
   font-weight: bold;
+  border-radius: var(--border-radius);
+  overflow: hidden;
 }
+.carousel .list .item .content .buttons .btn-primary:hover{
+  background: var(--gradient-secondary);
+  border-radius: var(--border-radius);
+}
+
+/* Gallery Thumbnails */
+.thumbnail{
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  width: max-content;
+  z-index: 100;
+  display: flex;
+  gap: 20px;
+}
+.thumbnail .item{
+  width: 150px;
+  height: 220px;
+  flex-shrink: 0;
+  position: relative;
+}
+.thumbnail .item img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.thumbnail .item .content{
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  right: 10px;
+  color: var(--background-color);
+}
+.thumbnail .item .content .category{
+  font-weight: bold;
+}
+/* gallery arrows */
+
+
+
+
+
 
 
 
