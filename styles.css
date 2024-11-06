@@ -1259,7 +1259,61 @@ animation-delay: 1.7s;
   }
   
 }
+.carousel.previous .list .item:nth-child(2){
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  animation: outImage 0.8s linear 1 forwards;
+}
+@keyframes outImage{
+  to{
+    width: 150px;
+    height: 220px;
+    border-radius: 20px;
+    left: 50%;
+    bottom: 50px;
+  }
+}
+.carousel.previous .thumbnail .item:nth-child(1){
+  width: 0;
+  overflow:hidden ;
+  opacity: 0;
+  animation: showThumbnails 0.8s linear 1 forwards;
+}
+.carousel .list .item:nth-child(2) .category,
+.carousel .list .item:nth-child(2) .title,
+.carousel .list .item:nth-child(2) .title .h3,
+.carousel .list .item:nth-child(2) .topic,
+.carousel .list .item:nth-child(2) .description,
+.carousel .list .item:nth-child(2) .buttons{
+  animation: contentOut 1.5s linear forwards;
+}
+@keyframes contentOut{
+  to{
+    transform: translateY(-150px);
+    filter: blur;
+    opacity: 0;
+  }
+}
+.carousel.next .arrows button,
+.carousel.previous .arrows button{
+  pointer-events: none;
+}
+/* time */
+.time{
+  width: 100px;
+  height: 3px;
+  background-color: var(--pop--textcolor);
+  position: absolute;
+  z-index: 100;
+  top: 0;
+  left: 0;
+}
 
+.carousel.next .time,
+.carousel.previous .time{
+  
+}
 
 
 
