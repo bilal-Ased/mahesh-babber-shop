@@ -71,6 +71,12 @@ serviceCards.forEach(card => {
   });
 });
 
+//Gallery section
+let nextDom = document.getElementById('next');
+let prevDom = document.getElementById('previous');
+let carouselDom = document.querySelector('.carousel');
+let listItemDom = document.querySelector('.carousel .list')
+
 
 
 
