@@ -1249,7 +1249,7 @@ animation-delay: 1.7s;
 .carousel.next .thumbnail .item:nth-last-child(1){
   width: 0;
   overflow: hidden;
-  animation: showThumbnail 0.8s linear 1 forwards;
+  animation: showThumbnails 0.8s linear 1 forwards;
 }
 @keyframes showThumbnails{
   to{
@@ -1320,6 +1320,7 @@ animation-delay: 1.7s;
   z-index: 100;
   top: 0;
   left: 0;
+  transition: var(--transition);
 }
 
 .carousel.next .time,
@@ -1335,11 +1336,11 @@ animation-delay: 1.7s;
 
 /* optimizatiomn with mobile */
 @media screen and (max-width: 678px){
-  .carousel .list .item .content{
+  .carousel .list .item .content .topic{
     padding-right: 0;
   }
   .carousel .list .item .content .title h3{
-    font-size: 2rem;
+    font-size: 1.2rem;
   }
 }
 

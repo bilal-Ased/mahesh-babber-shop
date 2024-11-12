@@ -3,13 +3,12 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initialize components
     initializeLoading();
     initializeNavigation();
-    initializeThemeToggle();
     initializeBookingSystem();
     initializeGallery();
     initializeTestimonials();
-    initializeScrollEffects();
-    initializeFormValidation();
-    initializeToasts();
+    //initializeScrollEffects();
+    //initializeFormValidation();
+    //initializeToasts();
 });
 
 // Loading Screen
@@ -24,6 +23,8 @@ function initializeLoading() {
         }, 1000);
     });
 }
+
+console.log(1+1);
 
 //services section 
 // Scroll-Based Animation on Service Cards
@@ -74,8 +75,71 @@ serviceCards.forEach(card => {
 //Gallery section
 let nextDom = document.getElementById('next');
 let prevDom = document.getElementById('previous');
+
 let carouselDom = document.querySelector('.carousel');
-let listItemDom = document.querySelector('.carousel .list')
+let SliderDom= carouselDom.querySelector('.list');
+let thumbnailBorderDom = document.querySelector('.carousel .thumbnail');
+let thumbnailItemsDom = thumbnailBorderDom.querySelectorAll('.item');
+//let timeDome= document.querySelector('.carousel .time');
+// let thumbnailDom = document.querySelector('.carousel .thumbnail');
+
+//thumbnailBorderDom.appendChild(thumbnailItemsDom[0]);
+let timeRunning = 3000;
+let timeAutoNext = 7000;
+
+//when user click next
+nextDom.onclick = function(){
+    showSlider('next');
+}
+//when user clicks previous
+prevDom.onclick = function(){
+    showSlider('previous');
+}
+
+//autorun the slider function
+let runTimeOut;
+let runAutoRun = setTimeout(()=> {
+    nextDom.click();
+}, timeAutoNext);
+
+
+function showSlider(type){
+    //varible that select all the items and thumbnails
+    let SliderItemsDom = SliderDom.querySelectorAll('.item');
+    let thumbnailItemsDom = document.querySelectorAll('.item');
+
+    //if the user clicks the next button
+    //append child/current item to move at the end of the row
+
+    // Check for items in DOM to prevent errors
+    if (SliderItemsDom.length === 0 || thumbnailItemsDom.length === 0) return;
+
+    if(type === 'next' ){
+        SliderDom.appendChild(SliderItemsDom[0]);
+        thumbnailBorderDom.appendChild(thumbnailItemsDom[0]);
+        carouselDom.classList.add('next');
+    }else{
+        // let positionLastItem = itemSlider.length - 1;
+        // listItemDom.prepend(itemSlider[positionLastItem]);
+        // thumbnailDom.prepend(itemThumbnail[positionLastItem]);
+        // carouselDom.classList.add('previous')
+        SliderDom.prepend(SliderItemsDom[SliderItemsDom.length - 1]);
+        thumbnailBorderDom.prepend(thumbnailItemsDom[thumbnailItemsDom.length - 1]);
+        carouselDom.classList.add('previous');
+    }
+
+    clearTimeout(runTimeOut);
+    runTimeOut = setTimeout(() => {
+        carouselDom.classList.remove('next');
+        carouselDom.classList.remove('previous');
+    }, timeRunning)
+
+    clearTimeout(runAutoRun);
+    runAutoRun = setTimeout(()=> {
+        next.click();
+    }, timeAutoNext);
+
+}
 
 
 
@@ -134,30 +198,6 @@ function initializeNavigation() {
     });
 }
 
-// Theme Toggle
-function initializeThemeToggle() {
-    const themeToggle = document.querySelector('.theme-toggle');
-    const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
-    
-    // Set initial theme
-    if (localStorage.getItem('theme') === 'dark' || 
-        (!localStorage.getItem('theme') && prefersDarkScheme.matches)) {
-        document.documentElement.setAttribute('data-theme', 'dark');
-        themeToggle.querySelector('i').classList.replace('fa-moon', 'fa-sun');
-    }
-
-    themeToggle?.addEventListener('click', () => {
-        const currentTheme = document.documentElement.getAttribute('data-theme');
-        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-        
-        document.documentElement.setAttribute('data-theme', newTheme);
-        localStorage.setItem('theme', newTheme);
-        
-        const icon = themeToggle.querySelector('i');
-        icon.classList.toggle('fa-moon');
-        icon.classList.toggle('fa-sun');
-    });
-}
 
 // Booking System
 function initializeBookingSystem() {
