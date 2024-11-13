@@ -1051,7 +1051,7 @@ input[type="time"]::-webkit-calendar-picker-indicator {
   height:100vh;
   overflow: hidden;
   /* move the image to section header */
-   margin-top: -155px;
+   margin-top: -145px;
    position: relative;
 }
 .carousel .list .item{
