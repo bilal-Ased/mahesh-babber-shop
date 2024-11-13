@@ -18,6 +18,7 @@
   --text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
   --text-shadow-gallery: 0 5px 10px #0004;
   --pop--textcolor: #f1683a;
+  --font-family: 'Poppins';
 
 /* Header variables */
 --header-bg: #2c3e50;
@@ -447,7 +448,7 @@ h6 {
 
 
 /* Enhanced Buttons */
-.btn {
+.btn{
   padding: 1rem 2rem;
   border: none;
   border-radius: var(--border-radius);
@@ -1045,6 +1046,7 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 /* carousel */
 .section-header p{
   color: var(--pop--textcolor);
+  font-family: var(--font-family);
 }
 .carousel{
   width: 100vw;
@@ -1053,6 +1055,8 @@ input[type="time"]::-webkit-calendar-picker-indicator {
   /* move the image to section header */
    margin-top: -145px;
    position: relative;
+   font-family: var(--font-family);
+  
 }
 .carousel .list .item{
   position: absolute;
@@ -1076,13 +1080,21 @@ input[type="time"]::-webkit-calendar-picker-indicator {
   box-sizing: border-box;
   color: var(--background-color);
   text-shadow: var(--text-shadow-gallery);
+  font-family: var(--font-family);
 }
 .carousel .list .item .content .category{
   font-weight: bold;
   letter-spacing: 10px;
-  font-size: 0.5rem;
+  font-family: var(--font-family);
 }
-.carousel .list .item .content .title  h3{
+
+.carousel .list .item .content .title,
+.carousel .list .item .content .topic{
+list-style: 1.3em;
+font-weight: bold;
+}
+.carousel .list .item .content .title{
+  font-weight: bold;
   font-size: 1.5rem;
   color: var(--text-color);
   margin-bottom: 0.5rem;
@@ -1091,10 +1103,8 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 }
 .carousel .list .item .content .topic {
   color: var(--pop--textcolor);
-  font-size: 1.5rem;
-  font-weight: bold;
-  line-height: 1.3rem;
 }
+
 .carousel .list .item .content .buttons{
   display: grid;
   grid-template-rows: 30px;
@@ -1105,10 +1115,10 @@ input[type="time"]::-webkit-calendar-picker-indicator {
   
 }
 .carousel .list .item .content .buttons .btn-primary{
-  border: 1px solid var(--background-color);
+  border: 1.75px solid;
   width: span 1;
   color: var(--background-color);
-  font-family: Poppins;
+  font-family: var(--font-family);
   letter-spacing: 3px;
   background: none;
   height: 35px;
@@ -1121,7 +1131,6 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 }
 .carousel .list .item .content .buttons .btn-primary:hover{
   background: var(--gradient-secondary);
-  border-radius: var(--border-radius);
 }
 
 /* Gallery Thumbnails */
