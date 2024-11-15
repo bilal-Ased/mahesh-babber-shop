@@ -1133,6 +1133,7 @@ font-weight: bold;
   background: var(--gradient-secondary);
 }
 
+
 /* Gallery Thumbnails */
 .thumbnail{
   position: absolute;
@@ -1164,7 +1165,7 @@ font-weight: bold;
   right: 10px;
   color: var(--background-color);
 }
-.thumbnail .item .content .category{
+.thumbnail .item .content .title{
   font-weight: bold;
 }
 /* gallery arrows */
@@ -1207,7 +1208,7 @@ font-weight: bold;
 
 .carousel .list .item:nth-child(1) .category,
 .carousel .list .item:nth-child(1) .title,
-.carousel .list .item:nth-child(1) .title .h3,
+/* .carousel .list .item:nth-child(1) .title .h3, */
 .carousel .list .item:nth-child(1) .topic,
 .carousel .list .item:nth-child(1) .description,
 .carousel .list .item:nth-child(1) .buttons{
