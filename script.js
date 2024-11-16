@@ -72,20 +72,18 @@ serviceCards.forEach(card => {
   });
 });
 
+
+
+
 //Gallery section
 let nextDom = document.getElementById('next');
 let prevDom = document.getElementById('previous');
 
 let carouselDom = document.querySelector('.carousel');
-let SliderDom= carouselDom.querySelector('.list');
-let thumbnailBorderDom = document.querySelector('.carousel .thumbnail');
-let thumbnailItemsDom = thumbnailBorderDom.querySelectorAll('.item');
-//let timeDome= document.querySelector('.carousel .time');
-// let thumbnailDom = document.querySelector('.carousel .thumbnail');
+let listItemDom = document.querySelector('.carousel .list');
+// let thumbnailDom = document.querySelector('.item .thumbnail');
+let thumbnailDom = document.querySelector('.carousel .thumbnail');
 
-//thumbnailBorderDom.appendChild(thumbnailItemsDom[0]);
-let timeRunning = 3000;
-let timeAutoNext = 7000;
 
 //when user click next
 nextDom.onclick = function(){
@@ -97,34 +95,27 @@ prevDom.onclick = function(){
 }
 
 //autorun the slider function
+let timeRunning = 3000;
+let timeAutoNext = 7000;
 let runTimeOut;
-let runAutoRun = setTimeout(()=> {
+let runAutoRun = setTimeout(()=>{
     nextDom.click();
-}, timeAutoNext);
+},timeAutoNext);
 
 
 function showSlider(type){
     //varible that select all the items and thumbnails
-    let SliderItemsDom = SliderDom.querySelectorAll('.item');
-    let thumbnailItemsDom = document.querySelectorAll('.item');
+    let itemSlider= document.querySelectorAll('.carousel .list .item');
+    let itemThumbnail = document.querySelectorAll('.carousel .thumbnail .item');
 
-    //if the user clicks the next button
-    //append child/current item to move at the end of the row
-
-    // Check for items in DOM to prevent errors
-    if (SliderItemsDom.length === 0 || thumbnailItemsDom.length === 0) return;
-
-    if(type === 'next' ){
-        SliderDom.appendChild(SliderItemsDom[0]);
-        thumbnailBorderDom.appendChild(thumbnailItemsDom[0]);
+    if(type === 'next'){
+        listItemDom.appendChild(itemSlider[0]);
+        thumbnailDom.appendChild(itemThumbnail[0]);
         carouselDom.classList.add('next');
     }else{
-        // let positionLastItem = itemSlider.length - 1;
-        // listItemDom.prepend(itemSlider[positionLastItem]);
-        // thumbnailDom.prepend(itemThumbnail[positionLastItem]);
-        // carouselDom.classList.add('previous')
-        SliderDom.prepend(SliderItemsDom[SliderItemsDom.length - 1]);
-        thumbnailBorderDom.prepend(thumbnailItemsDom[thumbnailItemsDom.length - 1]);
+        let positionLastItem = itemSlider.length -1;
+        listItemDom.prepend(itemSlider[positionLastItem]);
+        thumbnailDom.prepend(itemThumbnail[positionLastItem]);
         carouselDom.classList.add('previous');
     }
 
@@ -136,10 +127,34 @@ function showSlider(type){
 
     clearTimeout(runAutoRun);
     runAutoRun = setTimeout(()=> {
-        next.click();
+        nextDom.click();
     }, timeAutoNext);
 
 }
+// pause on hover
+carouselDom.addEventListener('mouseenter', () => {
+    clearTimeout(runAutoRun);
+});
+
+carouselDom.addEventListener('mouseleave', () => {
+    startAutoRun();
+});
+//mobile touchpoint support
+let touchStartX = 0;
+let touchEndX = 0;
+
+carouselDom.addEventListener('touchstart', e => {
+    touchStartX = e.changedTouches[0].screenX;
+});
+
+carouselDom.addEventListener('touchend', e => {
+    touchEndX = e.changedTouches[0].screenX;
+    if (touchStartX - touchEndX > 50) {
+        showSlider('next');
+    } else if (touchEndX - touchStartX > 50) {
+        showSlider('previous');
+    }
+});
 
 
 
