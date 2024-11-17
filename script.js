@@ -157,6 +157,614 @@ carouselDom.addEventListener('touchend', e => {
 });
 
 
+// //REviews Section
+// document.addEventListener("DOMContentLoaded", () => {
+//   class TestimonialsSlider {
+//     constructor() {
+//       this.slider = document.querySelector(".testimonials-slider");
+//       this.cards = document.querySelectorAll(".testimonial-card");
+//       this.dots = document.querySelectorAll(".progress-dot");
+//       this.next = document.querySelector(".next");
+//       this.prev = document.querySelector(".prev");
+//       this.currentIndex = 0;
+//       this.autoPlayInterval = null;
+//       this.isHovered = false;
+
+//       this.init();
+//     }
+
+//     init() {
+//       this.bindEvents();
+//       this.startAutoPlay();
+//       this.initTouchEvents();
+//       this.initLikeButtons();
+//       this.initRatingStars();
+//     }
+
+//     bindEvents() {
+//       this.next?.addEventListener("click", () => this.showNext());
+//       this.prev?.addEventListener("click", () => this.showPrev());
+      
+//       this.slider.addEventListener("mouseenter", () => {
+//         this.isHovered = true;
+//         this.stopAutoPlay();
+//       });
+
+//       this.slider.addEventListener("mouseleave", () => {
+//         this.isHovered = false;
+//         this.startAutoPlay();
+//       });
+
+//       this.dots.forEach((dot, index) => {
+//         dot.addEventListener("click", () => this.goToSlide(index));
+//       });
+//     }
+
+//     showNext() {
+//       this.currentIndex = (this.currentIndex + 1) % this.cards.length;
+//       this.updateSlider();
+//     }
+
+//     showPrev() {
+//       this.currentIndex = (this.currentIndex - 1 + this.cards.length) % this.cards.length;
+//       this.updateSlider();
+//     }
+
+//     goToSlide(index) {
+//       this.currentIndex = index;
+//       this.updateSlider();
+//     }
+
+//     updateSlider() {
+//       const offset = this.cards[this.currentIndex].offsetLeft;
+//       this.slider.scrollTo({
+//         left: offset,
+//         behavior: "smooth"
+//       });
+
+//       this.updateDots();
+//       this.updateCards();
+//     }
+
+//     updateDots() {
+//       this.dots.forEach((dot, index) => {
+//         dot.classList.toggle("active", index === this.currentIndex);
+//       });
+//     }
+
+//     updateCards() {
+//       this.cards.forEach((card, index) => {
+//         card.style.opacity = index === this.currentIndex ? "1" : "0.5";
+//         card.style.transform = index === this.currentIndex ? 
+//           "scale(1) translateZ(0)" : "scale(0.95) translateZ(0)";
+//       });
+//     }
+
+//     startAutoPlay() {
+//       if (this.autoPlayInterval) return;
+//       this.autoPlayInterval = setInterval(() => {
+//         if (!this.isHovered) this.showNext();
+//       }, 5000);
+//     }
+
+//     stopAutoPlay() {
+//       if (this.autoPlayInterval) {
+//         clearInterval(this.autoPlayInterval);
+//         this.autoPlayInterval = null;
+//       }
+//     }
+
+//     initTouchEvents() {
+//       let touchStartX = 0;
+//       let touchEndX = 0;
+
+//       this.slider.addEventListener("touchstart", e => {
+//         touchStartX = e.changedTouches[0].screenX;
+//       }, { passive: true });
+
+//       this.slider.addEventListener("touchend", e => {
+//         touchEndX = e.changedTouches[0].screenX;
+//         const diff = touchStartX - touchEndX;
+
+//         if (Math.abs(diff) > 50) {
+//           if (diff > 0) this.showNext();
+//           else this.showPrev();
+//         }
+//       }, { passive: true });
+//     }
+
+//     initLikeButtons() {
+//       document.querySelectorAll(".like-btn").forEach(btn => {
+//         btn.addEventListener("click", function() {
+//           const count = this.querySelector(".like-count");
+//           const currentLikes = parseInt(count.textContent);
+//           count.textContent = currentLikes + 1;
+//           this.classList.add("liked");
+//           this.disabled = true;
+//         });
+//       });
+//     }
+
+//     initRatingStars() {
+//       const stars = document.querySelectorAll(".rating-input .star");
+//       stars.forEach(star => {
+//         star.addEventListener("click", function() {
+//           const rating = this.dataset.rating;
+//           stars.forEach(s => {
+//             s.classList.toggle("selected", s.dataset.rating <= rating);
+//           });
+//         });
+
+//         star.addEventListener("mouseover", function() {
+//           const rating = this.dataset.rating;
+//           stars.forEach(s => {
+//             s.classList.toggle("hover", s.dataset.rating <= rating);
+//           });
+//         });
+
+//         star.addEventListener("mouseout", function() {
+//           stars.forEach(s => s.classList.remove("hover"));
+//         });
+//       });
+//     }
+//   }
+
+//   // Initialize the slider
+//   new TestimonialsSlider();
+// });
+
+
+// testimonials-manager.js
+// Basic usage
+const slider = new TestimonialsSlider('testimonials-slider');
+
+// With options
+const sliderWithOptions = new TestimonialsSlider('testimonials-slider', {
+    autoPlayDelay: 4000,
+    enableAutoPlay: true,
+    enableTouchSwipe: true,
+    enableKeyboardNav: true,
+    transitionDuration: 400,
+    onSlideChange: () => console.log('Slide changed')
+});
+
+class TestimonialsManager {
+  /**
+   * @typedef {Object} TestimonialOptions
+   * @property {number} autoPlayInterval - Interval in ms for auto-play (default: 5000)
+   * @property {boolean} enableAutoPlay - Whether to enable auto-play (default: true)
+   * @property {number} animationDuration - Duration in ms for slide transitions (default: 500)
+   * @property {number} touchThreshold - Minimum swipe distance for touch events (default: 50)
+   */
+
+  /**
+   * Initialize the testimonials slider with options
+   * @param {TestimonialOptions} options - Configuration options
+   */
+  constructor(options = {}) {
+    // Configuration
+    this.options = {
+      autoPlayInterval: options.autoPlayInterval || 5000,
+      enableAutoPlay: options.enableAutoPlay ?? true,
+      animationDuration: options.animationDuration || 500,
+      touchThreshold: options.touchThreshold || 50
+    };
+
+    // State
+    this.state = {
+      currentIndex: 0,
+      isAnimating: false,
+      isPaused: false,
+      autoPlayInterval: null,
+      touchStartX: 0,
+      touchStartY: 0
+    };
+
+    // DOM Elements
+    this.elements = {
+      container: document.querySelector('.testimonials-slider'),
+      slideTrack: document.querySelector('.slider-container'),
+      slides: Array.from(document.querySelectorAll('.testimonial-card')),
+      dots: Array.from(document.querySelectorAll('.dot')),
+      prevButton: document.querySelector('.control-button.prev'),
+      nextButton: document.querySelector('.control-button.next'),
+      likeButtons: document.querySelectorAll('.like-button')
+    };
+
+    // Validation
+    if (!this.validateElements()) {
+      console.error('Required DOM elements not found. Check your HTML structure.');
+      return;
+    }
+
+    // Initialize
+    this.init();
+  }
+
+  /**
+   * Validate required DOM elements
+   * @returns {boolean} - Whether all required elements are present
+   */
+  validateElements() {
+    return Object.values(this.elements).every(element => 
+      element && (element.length !== undefined || element instanceof Element)
+    );
+  }
+
+  /**
+   * Initialize the testimonials slider
+   */
+  init() {
+    this.setupEventListeners();
+    this.setupAccessibility();
+    this.initializeLikeSystem();
+    
+    if (this.options.enableAutoPlay) {
+      this.startAutoPlay();
+    }
+
+    this.updateControls();
+    this.setInitialState();
+  }
+
+  /**
+   * Set up all event listeners
+   */
+  setupEventListeners() {
+    // Navigation Controls
+    this.elements.prevButton?.addEventListener('click', () => this.navigate('prev'));
+    this.elements.nextButton?.addEventListener('click', () => this.navigate('next'));
+
+    // Dot Navigation
+    this.elements.dots.forEach((dot, index) => {
+      dot.addEventListener('click', () => this.goToSlide(index));
+    });
+
+    // Touch Events
+    this.setupTouchEvents();
+
+    // Pause on hover
+    this.elements.container.addEventListener('mouseenter', () => this.pause());
+    this.elements.container.addEventListener('mouseleave', () => this.resume());
+
+    // Keyboard Navigation
+    document.addEventListener('keydown', (e) => this.handleKeyboard(e));
+
+    // Visibility change
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden) {
+        this.pause();
+      } else {
+        this.resume();
+      }
+    });
+
+    // Resize handling
+    window.addEventListener('resize', this.debounce(() => this.handleResize(), 250));
+  }
+
+  /**
+   * Set up touch event handling
+   */
+  setupTouchEvents() {
+    const handleTouchStart = (e) => {
+      this.state.touchStartX = e.touches[0].clientX;
+      this.state.touchStartY = e.touches[0].clientY;
+    };
+
+    const handleTouchMove = (e) => {
+      if (!this.state.touchStartX) return;
+
+      const touchEndX = e.touches[0].clientX;
+      const touchEndY = e.touches[0].clientY;
+
+      const deltaX = this.state.touchStartX - touchEndX;
+      const deltaY = this.state.touchStartY - touchEndY;
+
+      // Prevent vertical scrolling when swiping horizontally
+      if (Math.abs(deltaX) > Math.abs(deltaY)) {
+        e.preventDefault();
+      }
+    };
+
+    const handleTouchEnd = (e) => {
+      if (!this.state.touchStartX) return;
+
+      const touchEndX = e.changedTouches[0].clientX;
+      const deltaX = this.state.touchStartX - touchEndX;
+
+      if (Math.abs(deltaX) > this.options.touchThreshold) {
+        if (deltaX > 0) {
+          this.navigate('next');
+        } else {
+          this.navigate('prev');
+        }
+      }
+
+      this.state.touchStartX = 0;
+      this.state.touchStartY = 0;
+    };
+
+    this.elements.container.addEventListener('touchstart', handleTouchStart, { passive: true });
+    this.elements.container.addEventListener('touchmove', handleTouchMove, { passive: false });
+    this.elements.container.addEventListener('touchend', handleTouchEnd, { passive: true });
+  }
+
+  /**
+   * Handle keyboard navigation
+   * @param {KeyboardEvent} event 
+   */
+  handleKeyboard(event) {
+    if (!this.elements.container.matches(':focus-within')) return;
+
+    switch (event.key) {
+      case 'ArrowLeft':
+        event.preventDefault();
+        this.navigate('prev');
+        break;
+      case 'ArrowRight':
+        event.preventDefault();
+        this.navigate('next');
+        break;
+    }
+  }
+
+  /**
+   * Set up accessibility attributes and features
+   */
+  setupAccessibility() {
+    this.elements.container.setAttribute('role', 'region');
+    this.elements.container.setAttribute('aria-label', 'Testimonials Slider');
+    
+    this.elements.slides.forEach((slide, index) => {
+      slide.setAttribute('role', 'tabpanel');
+      slide.setAttribute('aria-hidden', index !== 0 ? 'true' : 'false');
+      slide.setAttribute('id', `testimonial-${index}`);
+    });
+
+    this.elements.dots.forEach((dot, index) => {
+      dot.setAttribute('role', 'tab');
+      dot.setAttribute('aria-controls', `testimonial-${index}`);
+      dot.setAttribute('aria-selected', index === 0 ? 'true' : 'false');
+    });
+  }
+
+  /**
+   * Initialize the like system
+   */
+  initializeLikeSystem() {
+    this.elements.likeButtons.forEach(button => {
+      button.addEventListener('click', () => this.handleLike(button));
+    });
+  }
+
+  /**
+   * Handle like button click
+   * @param {HTMLElement} button 
+   */
+  handleLike(button) {
+    if (button.classList.contains('liked')) return;
+
+    const countElement = button.querySelector('.like-count');
+    if (countElement) {
+      const currentCount = parseInt(countElement.textContent);
+      countElement.textContent = currentCount + 1;
+      
+      button.classList.add('liked');
+      button.setAttribute('aria-pressed', 'true');
+      
+      // Optional: Save like state to localStorage
+      const testimonialId = button.closest('.testimonial-card').id;
+      localStorage.setItem(`liked_${testimonialId}`, 'true');
+    }
+  }
+
+  /**
+   * Navigate to previous or next slide
+   * @param {'prev' | 'next'} direction 
+   */
+  navigate(direction) {
+    if (this.state.isAnimating) return;
+
+    const newIndex = direction === 'next' 
+      ? Math.min(this.state.currentIndex + 1, this.elements.slides.length - 1)
+      : Math.max(this.state.currentIndex - 1, 0);
+
+    this.goToSlide(newIndex);
+  }
+
+  /**
+   * Go to a specific slide
+   * @param {number} index 
+   */
+  goToSlide(index) {
+    if (
+      this.state.isAnimating || 
+      index === this.state.currentIndex || 
+      index < 0 || 
+      index >= this.elements.slides.length
+    ) return;
+
+    this.state.isAnimating = true;
+    this.state.currentIndex = index;
+
+    // Update transform
+    const offset = -100 * index;
+    this.elements.slideTrack.style.transform = `translateX(${offset}%)`;
+
+    // Update UI
+    this.updateDots();
+    this.updateControls();
+    this.updateAriaAttributes();
+
+    // Reset animation state
+    setTimeout(() => {
+      this.state.isAnimating = false;
+    }, this.options.animationDuration);
+  }
+
+  /**
+   * Update dot indicators
+   */
+  updateDots() {
+    this.elements.dots.forEach((dot, index) => {
+      dot.classList.toggle('active', index === this.state.currentIndex);
+      dot.setAttribute('aria-selected', index === this.state.currentIndex ? 'true' : 'false');
+    });
+  }
+
+  /**
+   * Update navigation controls
+   */
+  updateControls() {
+    const isFirst = this.state.currentIndex === 0;
+    const isLast = this.state.currentIndex === this.elements.slides.length - 1;
+
+    this.elements.prevButton.disabled = isFirst;
+    this.elements.nextButton.disabled = isLast;
+
+    this.elements.prevButton.setAttribute('aria-disabled', isFirst);
+    this.elements.nextButton.setAttribute('aria-disabled', isLast);
+  }
+
+  /**
+   * Update ARIA attributes for accessibility
+   */
+  updateAriaAttributes() {
+    this.elements.slides.forEach((slide, index) => {
+      slide.setAttribute('aria-hidden', index !== this.state.currentIndex ? 'true' : 'false');
+    });
+  }
+
+  /**
+   * Start auto-play functionality
+   */
+  startAutoPlay() {
+    if (this.state.autoPlayInterval || !this.options.enableAutoPlay) return;
+
+    this.state.autoPlayInterval = setInterval(() => {
+      if (!this.state.isPaused) {
+        if (this.state.currentIndex < this.elements.slides.length - 1) {
+          this.navigate('next');
+        } else {
+          this.goToSlide(0);
+        }
+      }
+    }, this.options.autoPlayInterval);
+  }
+
+  /**
+   * Pause auto-play
+   */
+  pause() {
+    this.state.isPaused = true;
+  }
+
+  /**
+   * Resume auto-play
+   */
+  resume() {
+    if (this.options.enableAutoPlay) {
+      this.state.isPaused = false;
+    }
+  }
+
+  /**
+   * Handle window resize
+   */
+  handleResize() {
+    // Reset transform on resize to maintain alignment
+    const offset = -100 * this.state.currentIndex;
+    this.elements.slideTrack.style.transform = `translateX(${offset}%)`;
+  }
+
+  /**
+   * Set initial state
+   */
+  setInitialState() {
+    // Restore like states from localStorage
+    this.elements.likeButtons.forEach(button => {
+      const testimonialId = button.closest('.testimonial-card').id;
+      if (localStorage.getItem(`liked_${testimonialId}`) === 'true') {
+        button.classList.add('liked');
+        button.setAttribute('aria-pressed', 'true');
+      }
+    });
+  }
+
+  /**
+   * Debounce function for resize handling
+   * @param {Function} func 
+   * @param {number} wait 
+   * @returns {Function}
+   */
+  debounce(func, wait) {
+    let timeout;
+    return function executedFunction(...args) {
+      const later = () => {
+        clearTimeout(timeout);
+        func(...args);
+      };
+      clearTimeout(timeout);
+      timeout = setTimeout(later, wait);
+    };
+  }
+
+  /**
+   * Destroy the slider instance and clean up
+   */
+  destroy() {
+    // Clear intervals
+    if (this.state.autoPlayInterval) {
+      clearInterval(this.state.autoPlayInterval);
+    }
+
+    // Remove event listeners (if needed)
+    // Reset styles
+    this.elements.slideTrack.style.transform = '';
+    
+    // Clear state
+    this.state = null;
+    
+    // Remove references
+    this.elements = null;
+  }
+}
+
+// Initialize with options
+document.addEventListener('DOMContentLoaded', () => {
+  const testimonials = new TestimonialsManager({
+    autoPlayInterval: 5000,
+    enableAutoPlay: true,
+    animationDuration: 500,
+    touchThreshold: 50
+  });
+});
+
+// Export for module usage
+export default TestimonialsManager;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
