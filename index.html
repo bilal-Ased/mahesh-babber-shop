@@ -1,704 +1,728 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Mahesh Barber Shop - Premier hair styling and grooming services in Nairobi"
+    />
+    <meta
+      name="keywords"
+      content="barber, haircut, styling, grooming, beard trim, Nairobi"
+    />
+    <meta name="author" content="Mahesh Barber Shop" />
+    <meta name="theme-color" content="#BFA6A0" />
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Mahesh Barber Shop - Premier hair styling and grooming services in Nairobi">
-  <meta name="keywords" content="barber, haircut, styling, grooming, beard trim, Nairobi">
-  <meta name="author" content="Mahesh Barber Shop">
-  <meta name="theme-color" content="#BFA6A0">
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="Mahesh Barber Shop" />
+    <meta
+      property="og:description"
+      content="Premium barbering services in Nairobi"
+    />
+    <meta property="og:image" content="/api/placeholder/1200/630" />
+    <meta property="og:url" content="https://maheshbarbershop.co.ke" />
 
-  <!-- Open Graph Tags -->
-  <meta property="og:title" content="Mahesh Barber Shop">
-  <meta property="og:description" content="Premium barbering services in Nairobi">
-  <meta property="og:image" content="/api/placeholder/1200/630">
-  <meta property="og:url" content="https://maheshbarbershop.co.ke">
+    <title>Mahesh Barber Shop | Premium Grooming</title>
 
-  <title>Mahesh Barber Shop | Premium Grooming</title>
+    <!-- Preload Critical Resources -->
+    <link rel="preload" href="styles.css" as="style" />
+    <link rel="preload" href="script.js" as="script" crossorigin="anonymous" />
 
-  <!-- Preload Critical Resources -->
-  <link rel="preload" href="styles.css" as="style">
-  <link rel="preload" href="script.js" as="script" crossorigin="anonymous">
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="images/footerImg.png" />
+    <link rel="apple-touch-icon" href="/images/icons/favicon.svg" />
 
-  <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="images/footerImg.png">
-  <link rel="apple-touch-icon" href="/images/icons/favicon.svg">
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Kaushan+Script&display=swap"
+      rel="stylesheet"
+    />
 
-  <!-- Stylesheets -->
-  <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-  <link
-    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Kaushan+Script&display=swap"
-    rel="stylesheet">
+    <!-- Script -->
+    <script
+      src="https://kit.fontawesome.com/5af1316d11.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
 
-  <!-- Script -->
-  <script src="https://kit.fontawesome.com/5af1316d11.js" crossorigin="anonymous"></script>
-</head>
-
-<body>
-  <!-- Loading Screen -->
-  <div class="loading-screen">
-    <div class="loader"></div>
-  </div>
-
-  <!-- Accessibility Skip Link -->
-  <a href="#main-content" class="skip-link">Skip to main content</a>
-
-  <!-- Header -->
-  <header class="header" data-header>
-    <nav class="nav-container">
-      <div class="logo-container">
-        <img src="/images/icons/footerImg.png" alt="Mahesh Barber Shop Logo" class="logo" loading="lazy">
-      </div>
-      <ul class="nav-menu" role="navigation">
-        <li><a href="#home" class="nav-link">Home</a></li>
-        <li><a href="#services" class="nav-link">Services</a></li>
-        <li><a href="#booking" class="nav-link">Book Now</a></li>
-        <li><a href="#gallery" class="nav-link">Gallery</a></li>
-        <li><a href="#about" class="nav-link">About</a></li>
-        <li><a href="#contact" class="nav-link">Contact</a></li>
-      </ul>
-
-      <div class="search-container">
-        <input type="text" placeholder="Search..." aria-label="Search">
-      </div>
-
-    </nav>
-
-  </header>
-
-  <!-- Hero Section -->
-  <section id="home" class="hero" role="banner">
-    <div class="hero-content">
-      <h1 class="hero-title">Mahesh Barber and Hair Salon</h1>
-      <p class="hero-subtitle">Crafting Confidence Through Style</p>
-
-      <div class="hero-cta">
-        <button class="btn btn-primary" data-booking-trigger href="#booking">Book Appointment</button>
-      </div>
+  <body>
+    <!-- Loading Screen -->
+    <div class="loading-screen">
+      <div class="loader"></div>
     </div>
 
-    <div class="hero-background">
-      <div class="shape shape-1"></div>
-      <div class="shape shape-2"></div>
-      <div class="shape shape-3"></div>
-    </div>
-  </section>
+    <!-- Accessibility Skip Link -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
 
-  <!-- Services Section -->
-  <section id="services" class="services">
-    <div class="section-header">
-      <h2>Our Services</h2>
-      <p>Premium grooming services for the modern gentleman</p>
-    </div>
-
-    <div class="services-grid">
-      <!-- Service Cards -->
-      <article class="service-card" data-aos="fade-up">
-        <div class="service-image">
-          <img src="images/pic4.jpeg" alt="Haircut Service" loading="lazy">
+    <!-- Header -->
+    <header class="header" data-header>
+      <nav class="nav-container">
+        <div class="logo-container">
+          <img
+            src="/images/icons/footerImg.png"
+            alt="Mahesh Barber Shop Logo"
+            class="logo"
+            loading="lazy"
+          />
         </div>
-        <div class="service-content">
-          <h3>Premium Haircut</h3>
-          <p>Expert styling tailored to your features</p>
-          <div class="service-price">
-            <button class="btn btn-book">Book Now</button>
+        <ul class="nav-menu" role="navigation">
+          <li><a href="#home" class="nav-link">Home</a></li>
+          <li><a href="#services" class="nav-link">Services</a></li>
+          <li><a href="#booking" class="nav-link">Book Now</a></li>
+          <li><a href="#gallery" class="nav-link">Gallery</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+
+        <div class="search-container">
+          <input type="text" placeholder="Search..." aria-label="Search" />
+        </div>
+      </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero" role="banner">
+      <div class="hero-content">
+        <h1 class="hero-title">Mahesh Barber and Hair Salon</h1>
+        <p class="hero-subtitle">Crafting Confidence Through Style</p>
+
+        <div class="hero-cta">
+          <button class="btn btn-primary" data-booking-trigger href="#booking">
+            Book Appointment
+          </button>
+        </div>
+      </div>
+
+      <div class="hero-background">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+      <div class="section-header">
+        <h2>Our Services</h2>
+        <p>Premium grooming services for the modern gentleman</p>
+      </div>
+
+      <div class="services-grid">
+        <!-- Service Cards -->
+        <article class="service-card" data-aos="fade-up">
+          <div class="service-image">
+            <img src="images/pic4.jpeg" alt="Haircut Service" loading="lazy" />
           </div>
-        </div>
-      </article>
-      <article class="service-card" data-aos="fade-up">
-        <div class="service-image">
-          <img src="/images/picTwo.jpg" alt="Haircut Service" loading="lazy">
-        </div>
-        <div class="service-content">
-          <h3>Premium Haircut</h3>
-          <p>Expert styling tailored to your features</p>
-          <div class="service-price">
-            <button class="btn btn-book">Book Now</button>
+          <div class="service-content">
+            <h3>Premium Haircut</h3>
+            <p>Expert styling tailored to your features</p>
+            <div class="service-price">
+              <button class="btn btn-book">Book Now</button>
+            </div>
           </div>
-        </div>
-      </article>
-      <!-- More service cards following same structure -->
-      <!-- Repeated for other services -->
-    </div>
-  </section>
+        </article>
+        <article class="service-card" data-aos="fade-up">
+          <div class="service-image">
+            <img
+              src="/images/picTwo.jpg"
+              alt="Haircut Service"
+              loading="lazy"
+            />
+          </div>
+          <div class="service-content">
+            <h3>Premium Haircut</h3>
+            <p>Expert styling tailored to your features</p>
+            <div class="service-price">
+              <button class="btn btn-book">Book Now</button>
+            </div>
+          </div>
+        </article>
+        <!-- More service cards following same structure -->
+        <!-- Repeated for other services -->
+      </div>
+    </section>
 
+    <!-- Booking Section -->
+    <section id="booking" class="booking">
+      <div class="section-header">
+        <h2>Book Your Visit</h2>
+        <p>Schedule your next grooming session</p>
+      </div>
 
-
-
-
-
-<!-- Booking Section -->
-<section id="booking" class="booking">
-  <div class="section-header">
-    <h2>Book Your Visit</h2>
-    <p>Schedule your next grooming session</p>
-  </div>
-
-  <div class="booking-cards">
-    <!-- Working Days & Contact Card -->
-    <div class="card working-days">
-      <h3>Our Working Days ...</h3>
-      <ul>
-        <li>Monday - Friday: 9 AM - 8 PM</li>
-        <li>Saturday: 10 AM - 6 PM</li>
-        <li>Sunday: Closed</li>
-        <li>Public Holidays: Closed</li>
-      </ul>
-      <h4>Or Get In Touch!</h4>
-      <div class="contact-info">
-        <!-- <p>Phone: (123) 456-7890
+      <div class="booking-cards">
+        <!-- Working Days & Contact Card -->
+        <div class="card working-days">
+          <h3>Our Working Days ...</h3>
+          <ul>
+            <li>Monday - Friday: 9 AM - 8 PM</li>
+            <li>Saturday: 10 AM - 6 PM</li>
+            <li>Sunday: Closed</li>
+            <li>Public Holidays: Closed</li>
+          </ul>
+          <h4>Or Get In Touch!</h4>
+          <div class="contact-info">
+            <!-- <p>Phone: (123) 456-7890
           <a href="https://wa.me/1234567890" target="_blank">
             <img src="images/icons/whatsapp-brands-solid.svg" alt="WhatsApp" class="whatsapp-icon">
           </a>
         </p> -->
 
-        <ul>
-          <li><p>Whatsapp (123) 456-7890 : 
-            <a href="https://wa.me/1234567890" target="_blank">
-              <img src="images/icons/phone-volume-solid (1).svg" alt="WhatsApp" class="whatsapp-icon">
-            </a>
-          </p></li>
-          <li>
-            <p>Phonecall (123) 456-7890 :
-              <a href="https://wa.me/1234567890" target="_blank">
-                <img src="images/icons/whatsapp-brands-solid.svg" alt="WhatsApp" class="whatsapp-icon">
-              </a>
-            </p>
-          </li>
-        </ul>
+            <ul>
+              <li>
+                <p>
+                  Whatsapp (123) 456-7890 :
+                  <a href="https://wa.me/1234567890" target="_blank">
+                    <img
+                      src="images/icons/phone-volume-solid (1).svg"
+                      alt="WhatsApp"
+                      class="whatsapp-icon"
+                    />
+                  </a>
+                </p>
+              </li>
+              <li>
+                <p>
+                  Phonecall (123) 456-7890 :
+                  <a href="https://wa.me/1234567890" target="_blank">
+                    <img
+                      src="images/icons/whatsapp-brands-solid.svg"
+                      alt="WhatsApp"
+                      class="whatsapp-icon"
+                    />
+                  </a>
+                </p>
+              </li>
+            </ul>
+          </div>
+        </div>
 
+        <!-- Booking Form Card -->
+        <div class="card booking-form">
+          <h3>Booking Form</h3>
+          <form id="bookingForm">
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="name">Your Name</label>
+                <input type="text" id="name" name="name" required />
+              </div>
 
+              <div class="form-group">
+                <label for="phone">Your Phone</label>
+                <input type="tel" id="phone" name="phone" required />
+              </div>
+
+              <div class="form-group">
+                <label for="service">Select Service</label>
+                <select id="service" name="service" required>
+                  <option value="">Choose a service...</option>
+                  <option value="haircut">Haircut</option>
+                  <option value="beard">Beard Trim</option>
+                  <option value="combo">Full Grooming</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="stylist">Select Stylist</label>
+                <select id="stylist" name="stylist" required>
+                  <option value="">Choose a stylist...</option>
+                  <option value="john">John</option>
+                  <option value="mike">Mike</option>
+                  <option value="sarah">Sarah</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="date">Select Date</label>
+                <div class="input-icon-wrapper">
+                  <input type="date" id="date" name="date" required />
+                  <img
+                    src="images/icons/calendar-days-solid.svg"
+                    alt="Calendar Icon"
+                    class="input-icon"
+                  />
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="time">Select Time</label>
+                <div class="input-icon-wrapper">
+                  <input type="time" id="time" name="time" required />
+                  <img
+                    src="images/icons/clock-regular.svg"
+                    alt="Clock Icon"
+                    class="input-icon"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary">
+              Confirm Booking
+            </button>
+          </form>
+        </div>
       </div>
-    </div>
+    </section>
 
-    <!-- Booking Form Card -->
-    <div class="card booking-form">
-      <h3>Booking Form</h3>
-      <form id="bookingForm">
-        <div class="form-grid">
-          <div class="form-group">
-            <label for="name">Your Name</label>
-            <input type="text" id="name" name="name" required>
-          </div>
-
-          <div class="form-group">
-            <label for="phone">Your Phone</label>
-            <input type="tel" id="phone" name="phone" required>
-          </div>
-
-          <div class="form-group">
-            <label for="service">Select Service</label>
-            <select id="service" name="service" required>
-              <option value="">Choose a service...</option>
-              <option value="haircut">Haircut</option>
-              <option value="beard">Beard Trim</option>
-              <option value="combo">Full Grooming</option>
-            </select>
-          </div>
-
-          <div class="form-group">
-            <label for="stylist">Select Stylist</label>
-            <select id="stylist" name="stylist" required>
-              <option value="">Choose a stylist...</option>
-              <option value="john">John</option>
-              <option value="mike">Mike</option>
-              <option value="sarah">Sarah</option>
-            </select>
-          </div>
-
-          <div class="form-group">
-            <label for="date">Select Date</label>
-            <div class="input-icon-wrapper">
-              <input type="date" id="date" name="date" required>
-              <img src="images/icons/calendar-days-solid.svg" alt="Calendar Icon" class="input-icon">
-            </div>
-          </div>
-
-          <div class="form-group">
-            <label for="time">Select Time</label>
-            <div class="input-icon-wrapper">
-              <input type="time" id="time" name="time" required>
-              <img src="images/icons/clock-regular.svg" alt="Clock Icon" class="input-icon">
-            </div>
-          </div>
-        </div>
-
-        <button type="submit" class="btn btn-primary">Confirm Booking</button>
-      </form>
-    </div>
-  </div>
-</section>
-
-<!-- Gallery Section -->
-  <section>
-        <div class="section-header">
-          <h2>Style Gallery</h2>
-          <p>Showcase of our finest work</p>
-        </div>
-
-        <!-- carousel -->
-         <div class="carousel">
-          <!-- list of items -->
-
-          <div class="list">
-            <div class="item">
-              <img src="images/Gallery/kidfade.png" alt="imageOne">
-              <div class="content">
-                <div class="category">Boys</div>
-                <div class="title">Hair Style ...</div>
-                <div class="topic">Faded Cut</div>
-                <div class="description">
-                  A fade cut is a hairstyle where the hair gradually tapers from longer lengths at the top to very short or shaved
-                  sections near the neck and sides, creating a smooth, blended look.
-                </div>
-                <div class="buttons">
-                  <button class="btn-primary">BOOK</button>
-                </div>
-              </div>
-            </div>
-
-            <div class="item">
-              <img src="images/Gallery/ivy-league-haircut-with-fade.jpg" alt="imageOne">
-              <div class="content">
-                <div class="category">Boys</div>
-                <div class="title">
-                  <h3>Hair Style ...</h3>
-                </div>
-                <div class="topic">Faded Cut</div>
-                <div class="description">
-                  A fade cut is a hairstyle where the hair gradually tapers from longer lengths at the top to very short or shaved
-                  sections near the neck and sides, creating a smooth, blended look.
-                </div>
-                <div class="buttons">
-                  <button class="btn-primary">BOOK</button>
-                </div>
-              </div>
-            </div>
-
-            <div class="item">
-              <img src="images/Gallery/faded.webp" alt="imageOne">
-              <div class="content">
-                <div class="category">Boys</div>
-                <div class="title">
-                  <h3>Hair Style ...</h3>
-                </div>
-                <div class="topic">Faded Cut</div>
-                <div class="description">
-                  A fade cut is a hairstyle where the hair gradually tapers from longer lengths at the top to very short or shaved
-                  sections near the neck and sides, creating a smooth, blended look.
-                </div>
-                <div class="buttons">
-                  <button class="btn-primary">BOOK</button>
-                </div>
-              </div>
-            </div>
-
-            <div class="item">
-              <img src="images/Gallery/1080three.png" alt="imageOne">
-              <div class="content">
-                <div class="category">Boys</div>
-                <div class="title">
-                  <h3>Hair Style ...</h3>
-                </div>
-                <div class="topic">Faded Cut</div>
-                <div class="description">
-                  A fade cut is a hairstyle where the hair gradually tapers from longer lengths at the top to very short or shaved
-                  sections near the neck and sides, creating a smooth, blended look.
-                </div>
-                <div class="buttons">
-                  <button class="btn-primary">BOOK</button>
-                </div>
-              </div>
-            </div>           
-          </div>
-
-          <!-- thumbnails -->
-           <div class="thumbnail">
-
-            <div class="item">
-              <img src="images/Gallery/kidfade.png">
-              <div class="content">
-                <div class="title">
-                  Name Slider
-                </div>
-                <div class="description">
-                  Description
-                </div>
-              </div>
-            </div>
-
-            <div class="item">
-              <img src="images/Gallery/ivy-league-haircut-with-fade.jpg">
-              <div class="content">
-                <div class="title">
-                  Name Slider
-                </div>
-                <div class="description">
-                  Description
-                </div>
-              </div>
-            </div>
-
-            <div class="item">
-              <img src="images/Gallery/faded.webp">
-              <div class="content">
-                <div class="title">
-                  Name Slider
-                </div>
-                <div class="description">
-                  Description
-                </div>
-              </div>
-            </div>
-
-            <div class="item">
-              <img src="images/Gallery/1080three.png">
-              <div class="content">
-                <div class="title">
-                  Name Slider
-                </div>
-                <div class="description">
-                  Description
-                </div>
-              </div>
-            </div>
-           </div>
-
-           <!-- Arrows -->
-            <div class="arrows">
-              <button id="previous"> < </button>
-              <button id="next"> > </button>
-            </div>
-          <!-- time -->
-           <div class="time">
-            
-           </div>
-
-            
-         </div>
-  </section>
-
-
-  <section class="testimonials-section">
-    <div class="container">
+    <!-- Gallery Section -->
+    <section>
       <div class="section-header">
-        <h2>What Our Clients Say</h2>
-        <p>Real stories from real customers</p>
-  
-        <div class="stats-container">
-          <div class="stat-item">
-            <div class="stat-number">4.9</div>
-            <div class="stat-label">Average Rating</div>
+        <h2>Style Gallery</h2>
+        <p>Showcase of our finest work</p>
+      </div>
+
+      <!-- carousel -->
+      <div class="carousel">
+        <!-- list of items -->
+
+        <div class="list">
+          <div class="item">
+            <img src="images/Gallery/kidfade.png" alt="imageOne" />
+            <div class="content">
+              <div class="category">Boys</div>
+              <div class="title">Hair Style ...</div>
+              <div class="topic">Faded Cut</div>
+              <div class="description">
+                A fade cut is a hairstyle where the hair gradually tapers from
+                longer lengths at the top to very short or shaved sections near
+                the neck and sides, creating a smooth, blended look.
+              </div>
+              <div class="buttons">
+                <button class="btn-primary">BOOK</button>
+              </div>
+            </div>
           </div>
-          <div class="stat-item">
-            <div class="stat-number">2.4k+</div>
-            <div class="stat-label">Happy Clients</div>
+
+          <div class="item">
+            <img
+              src="images/Gallery/ivy-league-haircut-with-fade.jpg"
+              alt="imageOne"
+            />
+            <div class="content">
+              <div class="category">Boys</div>
+              <div class="title">
+                <h3>Hair Style ...</h3>
+              </div>
+              <div class="topic">Faded Cut</div>
+              <div class="description">
+                A fade cut is a hairstyle where the hair gradually tapers from
+                longer lengths at the top to very short or shaved sections near
+                the neck and sides, creating a smooth, blended look.
+              </div>
+              <div class="buttons">
+                <button class="btn-primary">BOOK</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="item">
+            <img src="images/Gallery/faded.webp" alt="imageOne" />
+            <div class="content">
+              <div class="category">Boys</div>
+              <div class="title">
+                <h3>Hair Style ...</h3>
+              </div>
+              <div class="topic">Faded Cut</div>
+              <div class="description">
+                A fade cut is a hairstyle where the hair gradually tapers from
+                longer lengths at the top to very short or shaved sections near
+                the neck and sides, creating a smooth, blended look.
+              </div>
+              <div class="buttons">
+                <button class="btn-primary">BOOK</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="item">
+            <img src="images/Gallery/1080three.png" alt="imageOne" />
+            <div class="content">
+              <div class="category">Boys</div>
+              <div class="title">
+                <h3>Hair Style ...</h3>
+              </div>
+              <div class="topic">Faded Cut</div>
+              <div class="description">
+                A fade cut is a hairstyle where the hair gradually tapers from
+                longer lengths at the top to very short or shaved sections near
+                the neck and sides, creating a smooth, blended look.
+              </div>
+              <div class="buttons">
+                <button class="btn-primary">BOOK</button>
+              </div>
+            </div>
           </div>
         </div>
+
+        <!-- thumbnails -->
+        <div class="thumbnail">
+          <div class="item">
+            <img src="images/Gallery/kidfade.png" />
+            <div class="content">
+              <div class="title">Name Slider</div>
+              <div class="description">Description</div>
+            </div>
+          </div>
+
+          <div class="item">
+            <img src="images/Gallery/ivy-league-haircut-with-fade.jpg" />
+            <div class="content">
+              <div class="title">Name Slider</div>
+              <div class="description">Description</div>
+            </div>
+          </div>
+
+          <div class="item">
+            <img src="images/Gallery/faded.webp" />
+            <div class="content">
+              <div class="title">Name Slider</div>
+              <div class="description">Description</div>
+            </div>
+          </div>
+
+          <div class="item">
+            <img src="images/Gallery/1080three.png" />
+            <div class="content">
+              <div class="title">Name Slider</div>
+              <div class="description">Description</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Arrows -->
+        <div class="arrows">
+          <button id="previous"><</button>
+          <button id="next">></button>
+        </div>
+        <!-- time -->
+        <div class="time"></div>
       </div>
-  
-      <div class="testimonials-slider">
-        <div class="slider-container">
-          <div class="testimonial-card">
-            <div class="testimonial-header">
-              <div class="avatar-container">
-                <img src="/images/image1.jpg" alt="John Doe" class="avatar">
-                <span class="verify-badge">✓</span>
+    </section>
+
+    <section class="testimonials-section">
+      <div class="container">
+        <div class="section-header">
+          <h2>What Our Clients Say</h2>
+          <p>Real stories from real customers</p>
+
+          <div class="stats-container">
+            <div class="stat-item">
+              <div class="stat-number">4.9</div>
+              <div class="stat-label">Average Rating</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number">2.4k+</div>
+              <div class="stat-label">Happy Clients</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonials-slider">
+          <div class="slider-container">
+            <div class="testimonial-card">
+              <div class="testimonial-header">
+                <div class="avatar-container">
+                  <img src="/images/image1.jpg" alt="John Doe" class="avatar" />
+                  <span class="verify-badge">✓</span>
+                </div>
+                <div class="user-info">
+                  <h4>John Doe</h4>
+                  <div class="location">New York, NY</div>
+                  <div class="rating">
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                  </div>
+                </div>
               </div>
-              <div class="user-info">
-                <h4>John Doe</h4>
-                <div class="location">New York, NY</div>
-                <div class="rating">
-                  <span class="star">★</span>
-                  <span class="star">★</span>
-                  <span class="star">★</span>
-                  <span class="star">★</span>
-                  <span class="star">★</span>
+
+              <div class="testimonial-content">
+                <p>
+                  "Exceptional service and attention to detail. The atmosphere
+                  is fantastic and the staff is incredibly professional. Highly
+                  recommended!"
+                </p>
+              </div>
+
+              <div class="service-tags">
+                <span class="tag">Haircut</span>
+                <span class="tag">Beard Trim</span>
+              </div>
+
+              <div class="testimonial-footer">
+                <button class="like-button">
+                  <span>👍</span>
+                  <span class="like-count">24</span>
+                  <span>Helpful</span>
+                </button>
+                <div class="verified-purchase">
+                  <span>✓</span>
+                  <span>Verified Purchase</span>
                 </div>
               </div>
             </div>
-  
-            <div class="testimonial-content">
-              <p>"Exceptional service and attention to detail. The atmosphere is fantastic and the staff is incredibly
-                professional. Highly recommended!"</p>
-            </div>
-  
-            <div class="service-tags">
-              <span class="tag">Haircut</span>
-              <span class="tag">Beard Trim</span>
-            </div>
-  
-            <div class="testimonial-footer">
-              <button class="like-button">
-                <span>👍</span>
-                <span class="like-count">24</span>
-                <span>Helpful</span>
-              </button>
-              <div class="verified-purchase">
-                <span>✓</span>
-                <span>Verified Purchase</span>
+            <!-- Additional cards would be dynamically added here -->
+            <div class="testimonial-card">
+              <div class="testimonial-header">
+                <div class="avatar-container">
+                  <img src="/images/image1.jpg" alt="John Doe" class="avatar" />
+                  <span class="verify-badge">✓</span>
+                </div>
+                <div class="user-info">
+                  <h4>John Doe</h4>
+                  <div class="location">New York, NY</div>
+                  <div class="rating">
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                  </div>
+                </div>
               </div>
-            </div>
-          </div>
-          <!-- Additional cards would be dynamically added here -->
-          <div class="testimonial-card">
-            <div class="testimonial-header">
-              <div class="avatar-container">
-                <img src="/images/image1.jpg" alt="John Doe" class="avatar">
-                <span class="verify-badge">✓</span>
+
+              <div class="testimonial-content">
+                <p>
+                  "Exceptional service and attention to detail. The atmosphere
+                  is fantastic and the staff is incredibly professional. Highly
+                  recommended!"
+                </p>
               </div>
-              <div class="user-info">
-                <h4>John Doe</h4>
-                <div class="location">New York, NY</div>
-                <div class="rating">
-                  <span class="star">★</span>
-                  <span class="star">★</span>
-                  <span class="star">★</span>
-                  <span class="star">★</span>
-                  <span class="star">★</span>
+
+              <div class="service-tags">
+                <span class="tag">Haircut</span>
+                <span class="tag">Beard Trim</span>
+              </div>
+
+              <div class="testimonial-footer">
+                <button class="like-button">
+                  <span>👍</span>
+                  <span class="like-count">24</span>
+                  <span>Helpful</span>
+                </button>
+                <div class="verified-purchase">
+                  <span>✓</span>
+                  <span>Verified Purchase</span>
                 </div>
               </div>
             </div>
-          
-            <div class="testimonial-content">
-              <p>"Exceptional service and attention to detail. The atmosphere is fantastic and the staff is incredibly
-                professional. Highly recommended!"</p>
-            </div>
-          
-            <div class="service-tags">
-              <span class="tag">Haircut</span>
-              <span class="tag">Beard Trim</span>
-            </div>
-          
-            <div class="testimonial-footer">
-              <button class="like-button">
-                <span>👍</span>
-                <span class="like-count">24</span>
-                <span>Helpful</span>
-              </button>
-              <div class="verified-purchase">
-                <span>✓</span>
-                <span>Verified Purchase</span>
+            <div class="testimonial-card">
+              <div class="testimonial-header">
+                <div class="avatar-container">
+                  <img src="/images/image1.jpg" alt="John Doe" class="avatar" />
+                  <span class="verify-badge">✓</span>
+                </div>
+                <div class="user-info">
+                  <h4>John Doe</h4>
+                  <div class="location">New York, NY</div>
+                  <div class="rating">
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                  </div>
+                </div>
               </div>
-            </div>
-          </div>
-          <div class="testimonial-card">
-            <div class="testimonial-header">
-              <div class="avatar-container">
-                <img src="/images/image1.jpg" alt="John Doe" class="avatar">
-                <span class="verify-badge">✓</span>
+
+              <div class="testimonial-content">
+                <p>
+                  "Exceptional service and attention to detail. The atmosphere
+                  is fantastic and the staff is incredibly professional. Highly
+                  recommended!"
+                </p>
               </div>
-              <div class="user-info">
-                <h4>John Doe</h4>
-                <div class="location">New York, NY</div>
-                <div class="rating">
-                  <span class="star">★</span>
-                  <span class="star">★</span>
-                  <span class="star">★</span>
-                  <span class="star">★</span>
-                  <span class="star">★</span>
+
+              <div class="service-tags">
+                <span class="tag">Haircut</span>
+                <span class="tag">Beard Trim</span>
+              </div>
+
+              <div class="testimonial-footer">
+                <button class="like-button">
+                  <span>👍</span>
+                  <span class="like-count">24</span>
+                  <span>Helpful</span>
+                </button>
+                <div class="verified-purchase">
+                  <span>✓</span>
+                  <span>Verified Purchase</span>
                 </div>
               </div>
             </div>
-          
-            <div class="testimonial-content">
-              <p>"Exceptional service and attention to detail. The atmosphere is fantastic and the staff is incredibly
-                professional. Highly recommended!"</p>
-            </div>
-          
-            <div class="service-tags">
-              <span class="tag">Haircut</span>
-              <span class="tag">Beard Trim</span>
-            </div>
-          
-            <div class="testimonial-footer">
-              <button class="like-button">
-                <span>👍</span>
-                <span class="like-count">24</span>
-                <span>Helpful</span>
-              </button>
-              <div class="verified-purchase">
-                <span>✓</span>
-                <span>Verified Purchase</span>
+            <div class="testimonial-card">
+              <div class="testimonial-header">
+                <div class="avatar-container">
+                  <img src="/images/image1.jpg" alt="John Doe" class="avatar" />
+                  <span class="verify-badge">✓</span>
+                </div>
+                <div class="user-info">
+                  <h4>John Doe</h4>
+                  <div class="location">New York, NY</div>
+                  <div class="rating">
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                  </div>
+                </div>
               </div>
-            </div>
-          </div>
-          <div class="testimonial-card">
-            <div class="testimonial-header">
-              <div class="avatar-container">
-                <img src="/images/image1.jpg" alt="John Doe" class="avatar">
-                <span class="verify-badge">✓</span>
+
+              <div class="testimonial-content">
+                <p>
+                  "Exceptional service and attention to detail. The atmosphere
+                  is fantastic and the staff is incredibly professional. Highly
+                  recommended!"
+                </p>
               </div>
-              <div class="user-info">
-                <h4>John Doe</h4>
-                <div class="location">New York, NY</div>
-                <div class="rating">
-                  <span class="star">★</span>
-                  <span class="star">★</span>
-                  <span class="star">★</span>
-                  <span class="star">★</span>
-                  <span class="star">★</span>
+
+              <div class="service-tags">
+                <span class="tag">Haircut</span>
+                <span class="tag">Beard Trim</span>
+              </div>
+
+              <div class="testimonial-footer">
+                <button class="like-button">
+                  <span>👍</span>
+                  <span class="like-count">24</span>
+                  <span>Helpful</span>
+                </button>
+                <div class="verified-purchase">
+                  <span>✓</span>
+                  <span>Verified Purchase</span>
                 </div>
               </div>
             </div>
-          
-            <div class="testimonial-content">
-              <p>"Exceptional service and attention to detail. The atmosphere is fantastic and the staff is incredibly
-                professional. Highly recommended!"</p>
-            </div>
-          
-            <div class="service-tags">
-              <span class="tag">Haircut</span>
-              <span class="tag">Beard Trim</span>
-            </div>
-          
-            <div class="testimonial-footer">
-              <button class="like-button">
-                <span>👍</span>
-                <span class="like-count">24</span>
-                <span>Helpful</span>
-              </button>
-              <div class="verified-purchase">
-                <span>✓</span>
-                <span>Verified Purchase</span>
-              </div>
-            </div>
+          </div>
+        </div>
+
+        <div class="slider-controls">
+          <button class="control-button prev" aria-label="Previous">←</button>
+          <button class="control-button next" aria-label="Next">→</button>
+        </div>
+
+        <div class="dots-container">
+          <span class="dot active"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+      <div class="section-header">
+        <h2>Get in Touch</h2>
+        <p>We'd love to hear from you</p>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-info">
+          <div class="info-card">
+            <i class="fas fa-map-marker-alt"></i>
+            <h4>Location</h4>
+            <p>#30 South C, Nairobi City Kenya</p>
           </div>
 
+          <div class="info-card">
+            <i class="fas fa-phone"></i>
+            <h4>Phone</h4>
+            <p>+254710999222</p>
+          </div>
 
+          <div class="info-card">
+            <i class="fas fa-envelope"></i>
+            <h4>Email</h4>
+            <p>info@maheshbarbershop.co.ke</p>
+          </div>
+
+          <div class="info-card">
+            <i class="fas fa-clock"></i>
+            <h4>Working Hours</h4>
+            <p>Mon-Fri: 9am - 9pm</p>
+            <p>Sat-Sun: 8am - 11pm</p>
+          </div>
         </div>
+
+        <form class="contact-form">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required />
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" required></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary">Send Message</button>
+        </form>
       </div>
-  
-      <div class="slider-controls">
-        <button class="control-button prev" aria-label="Previous">←</button>
-        <button class="control-button next" aria-label="Next">→</button>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="waves">
+        <div id="wave1" class="wave"></div>
+        <div id="wave2" class="wave"></div>
+        <div id="wave3" class="wave"></div>
+        <div id="wave4" class="wave"></div>
       </div>
-  
-      <div class="dots-container">
-        <span class="dot active"></span>
-        <span class="dot"></span>
-        <span class="dot"></span>
-      </div>
-    </div>
-  </section>
-
-
-
-
-
-
-
-
-
-
-
-  <!-- Contact Section -->
-  <section id="contact" class="contact">
-    <div class="section-header">
-      <h2>Get in Touch</h2>
-      <p>We'd love to hear from you</p>
-    </div>
-
-    <div class="contact-grid">
-      <div class="contact-info">
-        <div class="info-card">
-          <i class="fas fa-map-marker-alt"></i>
-          <h4>Location</h4>
-          <p>#30 South C, Nairobi City Kenya</p>
-        </div>
-
-        <div class="info-card">
-          <i class="fas fa-phone"></i>
-          <h4>Phone</h4>
-          <p>+254710999222</p>
-        </div>
-
-        <div class="info-card">
-          <i class="fas fa-envelope"></i>
-          <h4>Email</h4>
-          <p>info@maheshbarbershop.co.ke</p>
-        </div>
-
-        <div class="info-card">
-          <i class="fas fa-clock"></i>
-          <h4>Working Hours</h4>
-          <p>Mon-Fri: 9am - 9pm</p>
-          <p>Sat-Sun: 8am - 11pm</p>
-        </div>
-      </div>
-
-      <form class="contact-form">
-        <div class="form-group">
-          <label for="name">Name</label>
-          <input type="text" id="name" name="name" required>
-        </div>
-
-        <div class="form-group">
-          <label for="email">Email</label>
-          <input type="email" id="email" name="email" required>
-        </div>
-
-        <div class="form-group">
-          <label for="message">Message</label>
-          <textarea id="message" name="message" required></textarea>
-        </div>
-
-        <button type="submit" class="btn btn-primary">Send Message</button>
-      </form>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="waves">
-      <div id="wave1" class="wave"></div>
-      <div id="wave2" class="wave"></div>
-      <div id="wave3" class="wave"></div>
-      <div id="wave4" class="wave"></div>
-    </div>
-    <ul class="social-icons">
-      <li>
-        <a href="#" class=""><i class="fa-brands fa-facebook fa-bounce"></i></a>
-        <a href="#" class=""><i class="fa-brands fa-instagram fa-bounce"></i></a>
-        <a href="#" class=""><i class="fa-brands fa-x-twitter fa-bounce"></i></a>
-        <a href="#" class=""><i class="fa-brands fa-whatsapp fa-bounce"></i></a>
-      </li>
-    </ul>
-    <ul>
-      <li>
-        <a href="#">Home</a>
-        <a href="#">Our Services</a>
-        <a href="#">Book Now</a>
-        <a href="#">Gallery</a>
-        <a href="#">Contact Us</a>
-      </li>
-    </ul>
-    <p>Created with by @Branson </p>
-  </footer>
-
-
-
-
-
-  <!-- Modals -->
-  <div class="modal booking-modal" id="bookingModal">
-    <!-- Booking modal content -->
-  </div>
-
-  <div class="modal virtual-try-modal" id="virtualTryModal">
-    <!-- Virtual try-on modal content -->
-  </div>
-
-  <!-- Toast Notifications -->
-  <div class="toast-container"></div>
-
-
-
-  <!-- Scripts -->
-  <script type="module" src="script.js" crossorigin="anonymous"></script>
-  <script src="https://kit.fontawesome.com/5af1316d11.js" crossorigin="anonymous"></script>
-</body>
-
+      <ul class="social-icons">
+        <li>
+          <a href="#" class=""
+            ><i class="fa-brands fa-facebook fa-bounce"></i
+          ></a>
+        </li>
+        <li>
+          <a href="#" class=""
+            ><i class="fa-brands fa-instagram fa-bounce"></i
+          ></a>
+        </li>
+        <li>
+          <a href="#" class=""
+            ><i class="fa-brands fa-x-twitter fa-bounce"></i
+          ></a>
+        </li>
+        <li>
+          <a href="#" class=""
+            ><i class="fa-brands fa-whatsapp fa-bounce"></i
+          ></a>
+        </li>
+                <li>
+                  <a href="#" class=""><i class="fa-solid fa-phone-flip fa-bounce"></i></a>
+                </li>
+      </ul>
+      <ul class="footer-menu">
+        <li>
+          <a href="#">Home</a>
+          <a href="#">Our Services</a>
+          <a href="#">Book Now</a>
+          <a href="#">Gallery</a>
+          <a href="#">Contact Us</a>
+        </li>
+      </ul>
+      <p>Created with <i class="fa-solid fa-heart fa-beat"></i> by @Branson</p>
+    </footer>
+    <!-- Scripts -->
+    <script type="module" src="script.js" crossorigin="anonymous"></script>
+    <script
+      src="https://kit.fontawesome.com/5af1316d11.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>
