@@ -1,3 +1,3 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 240" width="100%">
-  <path d="M 0 66 Q 45 66 90 33 Q 180 -33 270 33 Q 315 66 360 66 Q 405 66 450 33 Q 540 -33 630 33 Q 675 66 720 66 L 360 240 L 0 240 Z" fill="#2c3e50"></path>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 360" width="1200" height="360">
+  <path d="M 0 240 Q 600 -240 1200 240 Q 1800 -240 2400 240 L 1200 360 L 0 360 Z" fill="#2c3e50"></path>
 </svg>
