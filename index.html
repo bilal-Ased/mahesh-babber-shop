@@ -625,52 +625,44 @@
         <p>We'd love to hear from you</p>
       </div>
 
-      <div class="contact-grid">
-        <div class="contact-info">
-          <div class="info-card">
-            <i class="fas fa-map-marker-alt"></i>
-            <h4>Location</h4>
-            <p>#30 South C, Nairobi City Kenya</p>
-          </div>
+      <div class="contact-cards">
+        <!-- contact us and location card -->
+         <div class="card contact-us">
+          <h3>Say Hello...</h3>
+          <form id="contactForm">
+            <div class="message-form-grid">
+              <div class="message-form-group">
+                <label for="name">Your Name</label>
+                <input type="text" id="name" name="name" required>
+              </div>
 
-          <div class="info-card">
-            <i class="fas fa-phone"></i>
-            <h4>Phone</h4>
-            <p>+254710999222</p>
-          </div>
+              <div class="message-form-group">
+                <label for="phone">Your Phone</label>
+                <input type="tel" name="phone" id="phone" required>
+              </div>
 
-          <div class="info-card">
-            <i class="fas fa-envelope"></i>
-            <h4>Email</h4>
-            <p>info@maheshbarbershop.co.ke</p>
-          </div>
+              <div class="message-form-group">
+                <label for="email">Your Email Address</label>
+                <input type="email" name="email" id="email" required>
+              </div>
 
-          <div class="info-card">
-            <i class="fas fa-clock"></i>
-            <h4>Working Hours</h4>
-            <p>Mon-Fri: 9am - 9pm</p>
-            <p>Sat-Sun: 8am - 11pm</p>
-          </div>
+              <div class="message-form-group">
+                <label for="message">Your Message</label>
+                <input type="text" name="message" id="message" required>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-primary">
+              Send your message
+            </button>
+          </form>
         </div>
 
-        <form class="contact-form">
-          <div class="form-group">
-            <label for="name">Name</label>
-            <input type="text" id="name" name="name" required />
+        <div class="card location-card">
+          <h3>Find Us Here...</h3>
+          <div class="location-info">
+            <iframe src="" frameborder="0"></iframe>
           </div>
-
-          <div class="form-group">
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" required />
-          </div>
-
-          <div class="form-group">
-            <label for="message">Message</label>
-            <textarea id="message" name="message" required></textarea>
-          </div>
-
-          <button type="submit" class="btn btn-primary">Send Message</button>
-        </form>
+        </div>
       </div>
     </section>
 
