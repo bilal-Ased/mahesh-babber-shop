@@ -1700,7 +1700,7 @@ footer .wave#wave4 {
 }
 
 /* Section content wrapper */
-.contact>* {
+.contact > * {
   position: relative;
   z-index: 2;
 }
@@ -1725,7 +1725,7 @@ footer .wave#wave4 {
 }
 
 /* Contact Cards Container */
-.contactUs{
+.contact-cards{
   display: grid;
   grid-template-columns: 2fr 1.5fr;
   gap: 2rem;
