@@ -1954,7 +1954,7 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 } */ */
 
 /* Enhanced Animations */
-@keyframes spin {
+/* @keyframes spin {
   to {
     transform: rotate(360deg);
   }
@@ -1969,7 +1969,7 @@ input[type="time"]::-webkit-calendar-picker-indicator {
   50% {
     transform: translateY(-10px);
   }
-}
+} */
 
 @keyframes backgroundFloat {
   0% {
