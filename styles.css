@@ -1673,7 +1673,7 @@ footer .wave#wave4 {
 }
 
 /* Enhanced Contact us  Section */
- .contact{
+.contact{
   padding: 8rem 0;
   background: linear-gradient(135deg, #f8f9fa, #ffffff);
   background-image: url("images/bookingwallpaper.jpg");
@@ -1734,7 +1734,7 @@ footer .wave#wave4 {
 }
 
 /* Card Base Styles with Glazed Glassy Effect */
-.contactCard{
+.card {
   position: relative;
   color: var(--text-color);
   backdrop-filter: blur(8px);
@@ -1745,68 +1745,33 @@ footer .wave#wave4 {
   transition: var(--transition);
 }
 
-/* Working Days Card */
-.working-days h3,
-.working-days h4 {
+/* location Card */
+.location-card h3{
   color: var(--primary-dark);
   margin-bottom: 1rem;
   font-size: 1.5rem;
 }
 
-.working-days ul {
-  list-style: none;
-  padding: 0;
-  margin-bottom: 1.5rem;
-}
-
-.working-days li {
-  padding: 0.6rem 0;
-  color: var(--secondary-color);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-}
-
-.working-days p {
-  margin: 0.5rem 0;
-  color: var(--secondary-color);
-}
-
-.contact-info {
-  display: flex;
-  align-items: center;
-}
-
-.whatsapp-icon {
-  width: 20px;
-  height: 20px;
-  transition: var(--transition);
-  margin-left: 0.5rem;
-  vertical-align: middle;
-}
-
-.whatsapp-icon:hover {
-  transform: scale(1.1);
-}
-
 /* contact Form Card */
-.contact-form h3 {
+.contact-us h3 {
   color: var(--primary-dark);
   margin-bottom: 1.5rem;
   font-size: 1.5rem;
 }
 
-/* Form Grid Layout */
-.contact-form-grid {
+/* contact  Form Grid Layout */
+.message-form-grid {
   display: grid; 
   /* grid-template-columns: repeat(2, 1fr);
   gap: 1.25rem; */
 }
 
-/* Form Group Styles */
-.form-group {
+/* contact Form Group Styles */
+.message-form-group {
   margin-bottom: 0.75rem;
 }
 
-.form-group label {
+.message-form-group label {
   display: block;
   margin-bottom: 0.5rem;
   color: var(--secondary-color);
@@ -1814,30 +1779,9 @@ footer .wave#wave4 {
   font-weight: 500;
 }
 
-/* Input Icon Wrapper */
-.input-icon-wrapper {
-  position: relative;
-  display: flex;
-  align-items: center;
-}
-
-/* Hide default icons for date and time inputs */
-input[type="date"]::-webkit-calendar-picker-indicator,
-input[type="time"]::-webkit-calendar-picker-indicator {
-  display: none;
-}
-
-/* Position custom input icons */
-.input-icon-wrapper .input-icon {
-  position: absolute;
-  right: 1rem;
-  width: 1.5rem;
-  height: 1.5rem;
-}
-
-/* Form Input Styles */
-.form-group input,
-.form-group select {
+/* contact form Form Input Styles */
+.message-form-group input,
+.message-form-group select {
   width: 100%;
   padding: 0.8rem 1rem;
   border: 2px solid var(--primary-light);
@@ -1862,15 +1806,15 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 }
 
 /* Focus and Hover States */
-.form-group input:focus,
-.form-group select:focus {
+.message-form-group input:focus,
+.message-form-group select:focus {
   outline: none;
   border-color: var(--primary-color);
   box-shadow: 0 0 0 3px rgba(191, 166, 160, 0.2);
 }
 
-.form-group input:hover,
-.form-group select:hover {
+.message-form-group input:hover,
+.message-form-group select:hover {
   border-color: var(--primary-color);
 }
 
@@ -1894,11 +1838,11 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 
 /* Responsive Design */
 @media (max-width: 968px) {
-  .booking-cards {
+  .contact-cards {
     grid-template-columns: 1fr;
   }
 
-  .form-grid {
+  .message-form-grid {
     grid-template-columns: 1fr;
   }
 
@@ -1926,7 +1870,7 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 }
 
 @media (max-width: 480px) {
-  .booking {
+  .contact {
     padding: 2rem 1rem;
   }
 
@@ -1938,8 +1882,8 @@ input[type="time"]::-webkit-calendar-picker-indicator {
     font-size: 1.75rem;
   }
 
-  .form-group input,
-  .form-group select {
+  .message-form-group input,
+  .message-form-group select {
     font-size: 16px;
   }
 }
