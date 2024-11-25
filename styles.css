@@ -1898,7 +1898,7 @@ footer .wave#wave4 {
 } */ */
 
 /* Enhanced Animations */
-/* @keyframes spin {
+@keyframes spin {
   to {
     transform: rotate(360deg);
   }
@@ -1913,7 +1913,7 @@ footer .wave#wave4 {
   50% {
     transform: translateY(-10px);
   }
-} */
+}
 
 @keyframes backgroundFloat {
   0% {
