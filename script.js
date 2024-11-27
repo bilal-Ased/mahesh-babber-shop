@@ -24,7 +24,21 @@ function initializeLoading() {
     });
 }
 
-console.log(1+1);
+//Booking button CTA
+function scrollToBooking() {
+  // Find the booking section using its ID
+  const bookingSection = document.getElementById('booking');
+  
+  // Check if the booking section exists
+  if (bookingSection) {
+    // Scroll to the section smoothly
+    bookingSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  } else {
+    console.error("Booking section not found.");
+  }
+}
+
+
 
 //services section 
 // Scroll-Based Animation on Service Cards
