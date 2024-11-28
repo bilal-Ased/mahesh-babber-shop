@@ -1,3 +1,24 @@
+function scrollToBooking() {
+    alert("Function called");
+    const bookingSection = document.getElementById('booking');
+    if (bookingSection) {
+        bookingSection.scrollIntoView({ behavior: 'smooth' });
+    } else {
+        console.error("Booking section not found!");
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
 // Wait for DOM to load
 document.addEventListener('DOMContentLoaded', () => {
     // Initialize components
@@ -9,6 +30,9 @@ document.addEventListener('DOMContentLoaded', () => {
     //initializeScrollEffects();
     //initializeFormValidation();
     //initializeToasts();
+
+    // Attach the function to a button or element that triggers scrolling
+ 
 });
 
 // Loading Screen
@@ -24,19 +48,7 @@ function initializeLoading() {
     });
 }
 
-//Booking button CTA
-function scrollToBooking() {
-  // Find the booking section using its ID
-  const bookingSection = document.getElementById('booking');
-  
-  // Check if the booking section exists
-  if (bookingSection) {
-    // Scroll to the section smoothly
-    bookingSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  } else {
-    console.error("Booking section not found.");
-  }
-}
+
 
 
 
@@ -866,22 +878,22 @@ function showToast(message, type = 'info') {
 }
 
 // Newsletter Form
-function initializeNewsletterForm() {
-    const form = document.querySelector('.newsletter-form');
-    form?.addEventListener('submit', async (e) => {
-        e.preventDefault();
-        const email = form.querySelector('input[type="email"]').value;
+// function initializeNewsletterForm() {
+//     const form = document.querySelector('.newsletter-form');
+//     form?.addEventListener('submit', async (e) => {
+//         e.preventDefault();
+//         const email = form.querySelector('input[type="email"]').value;
         
-        try {
-            // Simulate API call
-            await new Promise(resolve => setTimeout(resolve, 1000));
-            showToast('Successfully subscribed to newsletter!', 'success');
-            form.reset();
-        } catch (error) {
-            showToast('Failed to subscribe. Please try again.', 'error');
-        }
-    });
-}
+//         try {
+//             // Simulate API call
+//             await new Promise(resolve => setTimeout(resolve, 1000));
+//             showToast('Successfully subscribed to newsletter!', 'success');
+//             form.reset();
+//         } catch (error) {
+//             showToast('Failed to subscribe. Please try again.', 'error');
+//         }
+//     });
+// }
 
 // Initialize all components
 window.addEventListener('load', () => {
