@@ -7,7 +7,15 @@ function scrollToBooking() {
         console.error("Booking section not found!");
     }
 }
-
+// function scrollToBooking() {
+//     alert("Function called");
+//     const bookingSection = document.getElementById('booking');
+//     if (bookingSection) {
+//         bookingSection.scrollIntoView({ behavior: 'smooth' });
+//     } else {
+//         console.error("Booking section not found!");
+//     }
+// }
 
 
 
