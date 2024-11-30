@@ -593,6 +593,9 @@ h6 {
 .service-image {
   position: relative;
   overflow: hidden;
+  display: flex;
+  justify-content: center;
+  height: 230px;
 }
 
 .service-image img {
