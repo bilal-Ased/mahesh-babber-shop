@@ -1,32 +1,3 @@
-function scrollToBooking() {
-    alert("Function called");
-    const bookingSection = document.getElementById('booking');
-    if (bookingSection) {
-        bookingSection.scrollIntoView({ behavior: 'smooth' });
-    } else {
-        console.error("Booking section not found!");
-    }
-}
-// function scrollToBooking() {
-//     alert("Function called");
-//     const bookingSection = document.getElementById('booking');
-//     if (bookingSection) {
-//         bookingSection.scrollIntoView({ behavior: 'smooth' });
-//     } else {
-//         console.error("Booking section not found!");
-//     }
-// }
-
-
-
-
-
-
-
-
-
-
-
 // Wait for DOM to load
 document.addEventListener('DOMContentLoaded', () => {
     // Initialize components
@@ -43,6 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
  
 });
 
+
 // Loading Screen
 function initializeLoading() {
     const loader = document.querySelector('.loading-screen');
@@ -55,6 +27,40 @@ function initializeLoading() {
         }, 1000);
     });
 }
+
+//Scrooll user to booking form
+function scrollToBooking() {
+    const bookingSection = document.getElementById('booking');
+    if (bookingSection) {
+        bookingSection.scrollIntoView({ 
+            behavior: 'smooth', 
+            block: 'start' 
+        });
+    } else {
+        console.error("Booking section not found!");
+    }
+}
+
+// Add multiple ways to trigger the scroll
+document.addEventListener('DOMContentLoaded', () => {
+    // Add event listener to hero CTA button
+    const heroCTA = document.querySelector('.hero-cta');
+    if (heroCTA) {
+        heroCTA.addEventListener('click', scrollToBooking);
+    }
+
+    // Add event listener to navigation 'Book Now' link
+    const bookNowLink = document.querySelector('a[href="#booking"]');
+    if (bookNowLink) {
+        bookNowLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            scrollToBooking();
+        });
+    }
+
+    // Optional: Add global method to window for manual triggering if needed
+    window.scrollToBooking = scrollToBooking;
+});
 
 
 
@@ -106,7 +112,25 @@ serviceCards.forEach(card => {
   });
 });
 
-
+//Scroll to the booking form on click on the service card 
+document.addEventListener('DOMContentLoaded', () =>{
+  const btnBook = document.querySelector('.btnBook');
+  if(btnBook){
+    btnBook.addEventListener('click',scrollToBooking);
+  }
+})
+document.addEventListener('DOMContentLoaded', () =>{
+  const btnBookTwo = document.querySelector('.btnBookTwo');
+  if(btnBookTwo){
+    btnBookTwo.addEventListener('click',scrollToBooking);
+  }
+})
+document.addEventListener('DOMContentLoaded', () =>{
+  const btnBookThree = document.querySelector('.btnBookThree');
+  if(btnBookThree){
+    btnBookThree.addEventListener('click',scrollToBooking);
+  }
+})
 
 
 //Gallery section

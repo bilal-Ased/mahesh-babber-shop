@@ -45,11 +45,6 @@
     />
 
     <!-- Script -->
-    <script
-      src="https://kit.fontawesome.com/5af1316d11.js"
-      crossorigin="anonymous"
-    ></script>
-    <script type="module" src="script.js" crossorigin="anonymous" defer></script>
 
   </head>
 
@@ -95,7 +90,7 @@
         <p class="hero-subtitle">Crafting Confidence Through Style</p>
 
         <div class="hero-cta">
-          <button onclick="scrollToBooking()" class="btn btn-primary booking-cta-button">
+          <button onclick="scrollToBooking()" class="btn btn-primary booking-cta-button" href="#booking">
             Book Appointment
           </button>
         </div>
@@ -125,10 +120,24 @@
             <h3>Premium Haircut</h3>
             <p>Expert styling tailored to your features</p>
             <div class="service-price">
-              <button class="btn btn-book">Book Now</button>
+              <button onclick="scrollToBooking" href="#booking" class="btn btnBook">Book Now</button>
             </div>
           </div>
         </article>
+
+        <article class="service-card" data-aos="fade-up">
+          <div class="service-image">
+            <img src="images/pic4.jpeg" alt="Haircut Service" loading="lazy" />
+          </div>
+          <div class="service-content">
+            <h3>Premium Haircut</h3>
+            <p>Expert styling tailored to your features</p>
+            <div class="service-price">
+              <button onclick="scrollToBooking" href="#booking" class="btn btnBook btnBookTwo">Book Now</button>
+            </div>
+          </div>
+        </article>
+
         <article class="service-card" data-aos="fade-up">
           <div class="service-image">
             <img
@@ -141,7 +150,7 @@
             <h3>Premium Haircut</h3>
             <p>Expert styling tailored to your features</p>
             <div class="service-price">
-              <button class="btn btn-book">Book Now</button>
+              <button onclick="scrollToBooking" href="#booking" class="btn btnBook btnBookThree">Book Now</button>
             </div>
           </div>
         </article>
@@ -723,10 +732,7 @@
       <p>Created with <i class="fa-solid fa-heart fa-beat"></i> by @Branson</p>
     </footer>
     <!-- Scripts -->
-    <script type="module" src="script.js" crossorigin="anonymous"></script>
-    <script
-      src="https://kit.fontawesome.com/5af1316d11.js"
-      crossorigin="anonymous"
-    ></script>
+        <script src="https://kit.fontawesome.com/5af1316d11.js" crossorigin="anonymous"></script>
+        <script type="module" src="script.js" crossorigin="anonymous" defer></script>
   </body>
 </html>
