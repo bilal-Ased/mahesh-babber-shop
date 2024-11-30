@@ -214,6 +214,17 @@ carouselDom.addEventListener('touchend', e => {
     }
 });
 
+//booking button
+document.addEventListener('DOMContentLoaded', () =>{
+  const btnBookFour = document.querySelector('.btnBookFour');
+  if(btnBookFour){
+    btnBookFour.addEventListener('click',scrollToBooking);
+  }
+})
+
+
+
+
 const slider = new TestimonialsSlider('testimonials-slider');
 
 // With options
