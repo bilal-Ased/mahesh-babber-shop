@@ -221,6 +221,24 @@ document.addEventListener('DOMContentLoaded', () =>{
     btnBookFour.addEventListener('click',scrollToBooking);
   }
 })
+document.addEventListener('DOMContentLoaded', () =>{
+  const btnBookFive = document.querySelector('.btnBookFive');
+  if(btnBookFive){
+    btnBookFive.addEventListener('click',scrollToBooking);
+  }
+})
+document.addEventListener('DOMContentLoaded', () =>{
+  const btnBookSix = document.querySelector('.btnBookSix');
+  if(btnBookSix){
+    btnBookSix.addEventListener('click',scrollToBooking);
+  }
+})
+document.addEventListener('DOMContentLoaded', () =>{
+  const btnBookSeven = document.querySelector('.btnBookSeven');
+  if(btnBookSeven){
+    btnBookSeven.addEventListener('click',scrollToBooking);
+  }
+})
 
 
 
