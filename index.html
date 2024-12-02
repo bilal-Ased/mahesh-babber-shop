@@ -45,7 +45,10 @@
     />
 
     <!-- Script -->
-
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script>
+      emailjs.init("EevX8WfcudHu9GwPh"); // Replace with your EmailJS Public Key
+    </script>
   </head>
 
   <body>
@@ -90,7 +93,11 @@
         <p class="hero-subtitle">Crafting Confidence Through Style</p>
 
         <div class="hero-cta">
-          <button onclick="scrollToBooking()" class="btn btn-primary booking-cta-button" href="#booking">
+          <button
+            onclick="scrollToBooking()"
+            class="btn btn-primary booking-cta-button"
+            href="#booking"
+          >
             Book Appointment
           </button>
         </div>
@@ -114,13 +121,23 @@
         <!-- Service Cards -->
         <article class="service-card" data-aos="fade-up">
           <div class="service-image">
-            <img src="images/haircut.png" alt="Haircut Service" loading="lazy" />
+            <img
+              src="images/haircut.png"
+              alt="Haircut Service"
+              loading="lazy"
+            />
           </div>
           <div class="service-content">
             <h3>Premium Haircut</h3>
             <p>Expert cuts tailored to perfection for a polished look.</p>
             <div class="service-price">
-              <button onclick="scrollToBooking" href="#booking" class="btn btnBook">Book Now</button>
+              <button
+                onclick="scrollToBooking"
+                href="#booking"
+                class="btn btnBook"
+              >
+                Book Now
+              </button>
             </div>
           </div>
         </article>
@@ -133,7 +150,13 @@
             <h3>Facial Care</h3>
             <p>Rejuvenate your skin with tailored facial care for men.</p>
             <div class="service-price">
-              <button onclick="scrollToBooking" href="#booking" class="btn btnBook btnBookTwo">Book Now</button>
+              <button
+                onclick="scrollToBooking"
+                href="#booking"
+                class="btn btnBook btnBookTwo"
+              >
+                Book Now
+              </button>
             </div>
           </div>
         </article>
@@ -150,7 +173,13 @@
             <h3>Beard Trim</h3>
             <p>Sharp lines and precision for a perfectly styled beard.</p>
             <div class="service-price">
-              <button onclick="scrollToBooking" href="#booking" class="btn btnBook btnBookThree">Book Now</button>
+              <button
+                onclick="scrollToBooking"
+                href="#booking"
+                class="btn btnBook btnBookThree"
+              >
+                Book Now
+              </button>
             </div>
           </div>
         </article>
@@ -305,7 +334,9 @@
                 the neck and sides, creating a smooth, blended look.
               </div>
               <div class="buttons">
-                <button class="btn-primary btnBookFour" href="booking">BOOK</button>
+                <button class="btn-primary btnBookFour" href="booking">
+                  BOOK
+                </button>
               </div>
             </div>
           </div>
@@ -327,7 +358,9 @@
                 the neck and sides, creating a smooth, blended look.
               </div>
               <div class="buttons">
-                <button class="btn-primary btnBookFive" href="booking">BOOK</button>
+                <button class="btn-primary btnBookFive" href="booking">
+                  BOOK
+                </button>
               </div>
             </div>
           </div>
@@ -346,7 +379,9 @@
                 the neck and sides, creating a smooth, blended look.
               </div>
               <div class="buttons">
-                <button class="btn-primary btnBookSix" href="booking">BOOK</button>
+                <button class="btn-primary btnBookSix" href="booking">
+                  BOOK
+                </button>
               </div>
             </div>
           </div>
@@ -365,7 +400,9 @@
                 the neck and sides, creating a smooth, blended look.
               </div>
               <div class="buttons">
-                <button class="btn-primary btnBookSeven" href="booking">BOOK</button>
+                <button class="btn-primary btnBookSeven" href="booking">
+                  BOOK
+                </button>
               </div>
             </div>
           </div>
@@ -662,7 +699,7 @@
                 <input type="text" name="message" id="message" required />
               </div>
             </div>
-            <button type="submit" class="btn btn-primary">
+            <button type="submit" class="btn btn-primary btnContactUs">
               Send your message
             </button>
           </form>
@@ -732,7 +769,15 @@
       <p>Created with <i class="fa-solid fa-heart fa-beat"></i> by @Branson</p>
     </footer>
     <!-- Scripts -->
-        <script src="https://kit.fontawesome.com/5af1316d11.js" crossorigin="anonymous"></script>
-        <script type="module" src="script.js" crossorigin="anonymous" defer></script>
+    <script
+      src="https://kit.fontawesome.com/5af1316d11.js"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      type="module"
+      src="script.js"
+      crossorigin="anonymous"
+      defer
+    ></script>
   </body>
 </html>
