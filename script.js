@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initializeBookingSystem();
   initializeGallery();
   initializeTestimonials();
+  emailjs.init("EevX8WfcudHu9GwPh");
   //initializeScrollEffects();
   //initializeFormValidation();
   //initializeToasts();
@@ -954,29 +955,110 @@ export {
 };
 
 // Function to send an email alert when contact us is filled
+// document.addEventListener("DOMContentLoaded", () => {
+  
+//   const contactForm = document.querySelector("#contactForm");
+//   if (contactForm) {
+//     contactForm.addEventListener("submit", contactEmail);
+//   }
+// });
+
+// function contactEmail(event) {
+//   event.preventDefault();
+
+//   let params = {
+//     name: document.getElementById("name").value,
+//     phone: document.getElementById("phone").value,
+//     email: document.getElementById("email").value,
+//     message: document.getElementById("message").value,
+//   };
+
+//   emailjs
+//   .sendForm("service_2pmrqw8", "template_73xpioc", params)
+//   .then(
+//     () => {
+//       alert("Thank you for contacting us!");
+//     },
+//     (error) => {
+//       console.error("Failed to send email: ", error);
+//       alert("There was an issue sending your message, Please try again");
+//     },
+//   );
+// }
 function contactEmail(event) {
   event.preventDefault();
 
+  // Ensure EmailJS is initialized
+  if (!emailjs) {
+    console.error("EmailJS is not loaded");
+    alert("Email service is not available. Please try again later.");
+    return;
+  }
+
+  // Validate form fields
+  const name = document.getElementById("name").value.trim();
+  const phone = document.getElementById("phone").value.trim();
+  const email = document.getElementById("email").value.trim();
+  const message = document.getElementById("message").value.trim();
+
+  // Basic validation
+  if (!name || !email || !message) {
+    alert("Please fill in all required fields");
+    return;
+  }
+
+  // Prepare params
   let params = {
-    name: document.getElementById("name").value,
-    phone: document.getElementById("phone").value,
-    email: document.getElementById("email").value,
-    message: document.getElementById("message").value,
+    name,
+    phone,
+    email,
+    message
   };
 
-  emailjs.send("service_2pmrqw8", "service_2pmrqw8", params).then(
-    () => {
-      alert("Thank you for contacting us!");
-    },
-    (error) => {
-      console.error("Failed to send email: ", error);
-      alert("There was an issue sending your message, Please try again");
-    },
-  );
+  // Disable submit button to prevent multiple submissions
+  const submitButton = event.target.querySelector('button[type="submit"]');
+  submitButton.disabled = true;
+
+  console.log("Attempting to send email with params:", params);
+
+  emailjs
+    .send("service_2pmrqw8", "template_73xpioc", params)
+    .then(
+      (response) => {
+        console.log("Email sent successfully!", response);
+        alert("Thank you for contacting us!");
+        event.target.reset(); // Clear form
+      },
+      (error) => {
+        console.error("Failed to send email:", error);
+        console.error("Error details:", 
+          "Status:", error.status, 
+          "Text:", error.text
+        );
+        alert("There was an issue sending your message. Please try again.");
+      }
+    )
+    .finally(() => {
+      // Re-enable submit button
+      submitButton.disabled = false;
+    });
 }
+
+// Ensure EmailJS library is loaded
 document.addEventListener("DOMContentLoaded", () => {
-  const contactForm = document.querySelector("contactForm");
+  // Make sure to add the script tag for EmailJS in your HTML
+  const script = document.createElement('script');
+  script.src = 'https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js';
+  script.onload = () => {
+    emailjs.init("YOUR_PUBLIC_KEY"); // Replace with your actual public key
+  };
+  document.body.appendChild(script);
+
+  const contactForm = document.querySelector("#contactForm");
   if (contactForm) {
     contactForm.addEventListener("submit", contactEmail);
   }
 });
+console.log("Document ready. Initializing...");
+console.log("Contact form:", document.querySelector("#contactForm"));
+console.log("EmailJS status:", typeof emailjs);
