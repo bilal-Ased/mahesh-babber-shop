@@ -761,9 +761,9 @@ function initializeBookingSystem() {
   });
 
   // Virtual Try-On Feature
-  virtualTryButton?.addEventListener("click", () => {
-    virtualTryModal.style.display = "flex";
-  });
+  // virtualTryButton?.addEventListener("click", () => {
+  //   virtualTryModal.style.display = "flex";
+  // });
 
   // Close modals when clicking outside
   window.addEventListener("click", (e) => {
@@ -923,6 +923,23 @@ function showToast(message, type = "info") {
   }, 3000);
 }
 
+// Newsletter Form
+// function initializeNewsletterForm() {
+//     const form = document.querySelector('.newsletter-form');
+//     form?.addEventListener('submit', async (e) => {
+//         e.preventDefault();
+//         const email = form.querySelector('input[type="email"]').value;
+
+//         try {
+//             // Simulate API call
+//             await new Promise(resolve => setTimeout(resolve, 1000));
+//             showToast('Successfully subscribed to newsletter!', 'success');
+//             form.reset();
+//         } catch (error) {
+//             showToast('Failed to subscribe. Please try again.', 'error');
+//         }
+//     });
+// }
 
 // Initialize all components
 window.addEventListener("load", () => {
