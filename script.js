@@ -234,7 +234,9 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-const slider = new TestimonialsSlider("testimonials-slider");
+console.log(1 + 1);
+
+const slider =  new  TestimonialsSlider("testimonials-slider");
 
 // With options
 const sliderWithOptions = new TestimonialsSlider("testimonials-slider", {
@@ -739,7 +741,7 @@ function initializeBookingSystem() {
     // Get form data
     const formData = new FormData(bookingForm);
     const bookingData = Object.fromEntries(formData.entries());
-
+  
     try {
       // Validate booking data
       if (!validateBookingData(bookingData)) {
@@ -759,6 +761,7 @@ function initializeBookingSystem() {
       );
     }
   });
+}
 
   // Virtual Try-On Feature
   // virtualTryButton?.addEventListener("click", () => {
@@ -923,7 +926,7 @@ function showToast(message, type = "info") {
   }, 3000);
 }
 
-
+console.log(1 + 1);
 
 // Initialize all components
 window.addEventListener("load", () => {
@@ -937,6 +940,8 @@ export {
   initializeGallery,
   initializeTestimonials,
 };
+
+console.log(1 + 1);
 
 // Function to send an email alert when contact us is filled
 // document.addEventListener("DOMContentLoaded", () => {
@@ -973,7 +978,7 @@ function contactEmail(event) {
   event.preventDefault();
 
   // Ensure EmailJS is initialized
-  if (!emailjs) {
+  if (!email) {
     console.error("EmailJS is not loaded");
     alert("Email service is not available. Please try again later.");
     return;
@@ -1031,12 +1036,12 @@ function contactEmail(event) {
 // Ensure EmailJS library is loaded
 document.addEventListener("DOMContentLoaded", () => {
   // Make sure to add the script tag for EmailJS in your HTML
-  const script = document.createElement('script');
-  script.src = 'https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js';
-  script.onload = () => {
-    emailjs.init("YOUR_PUBLIC_KEY"); // Replace with your actual public key
-  };
-  document.body.appendChild(script);
+  // const script = document.createElement('script');
+  // script.src = 'https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js';
+  // script.onload = () => {
+  //   emailjs.init("YOUR_PUBLIC_KEY"); // Replace with your actual public key
+  // };
+  // document.body.appendChild(script);
 
   const contactForm = document.querySelector("#contactForm");
   if (contactForm) {
