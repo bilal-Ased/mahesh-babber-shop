@@ -234,9 +234,74 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
+//Contact Us Form
+// Function to send an email alert when contact us is filled
+document.addEventListener("DOMContentLoaded", () => {
+  const contactForm = document.querySelector("#contactForm");
+  if (contactForm) {
+    contactForm.addEventListener("submit", contactEmail);
+  }
+});
+
+function contactEmail(event) {
+  event.preventDefault();
+
+  let params = {
+    name: contactForm.querySelector("#name").value,
+    phone: contactForm.querySelector("#phone").value,
+    user_email: contactForm.querySelector("#user_email").value,
+    message: contactForm.querySelector("#message").value,
+  };
+
+  //   if(params.name.trim() == '')
+  // {
+  // alert("Name is empty")
+  // return
+  // }
+
+  //   if(params.phone.trim() == '')
+  // {
+  // alert("Phone is empty")
+  // return
+  // }
+
+  //   if(params.user_email.trim() == '')
+  // {
+  // alert("Email is empty")
+  // return
+  // }
+  //   if(params.message.trim() == '')
+  // {
+  // alert("Message is empty")
+  // return
+  // }
+
+  // console.log(params)
+  //   return;
+
+  // emailjs.send("service_2pmrqw8","Mahesh_Contact_US_ID",{
+  // name: "ne",
+  // phone: "0988",
+  // message: "656",
+  // user_email: "test@gmail.com",
+  // });
+
+  // return
+
+  emailjs.send("service_2pmrqw8", "Mahesh_Contact_US_ID", params).then(
+    () => {
+      alert("Thank you for contacting us!");
+    },
+    (error) => {
+      console.error("Failed to send email: ", error);
+      alert("There was an issue sending your message, Please try again");
+    },
+  );
+}
+
 console.log(1 + 1);
 
-const slider =  new  TestimonialsSlider("testimonials-slider");
+const slider = new TestimonialsSlider("testimonials-slider");
 
 // With options
 const sliderWithOptions = new TestimonialsSlider("testimonials-slider", {
@@ -741,7 +806,7 @@ function initializeBookingSystem() {
     // Get form data
     const formData = new FormData(bookingForm);
     const bookingData = Object.fromEntries(formData.entries());
-  
+
     try {
       // Validate booking data
       if (!validateBookingData(bookingData)) {
@@ -763,12 +828,12 @@ function initializeBookingSystem() {
   });
 }
 
-  // Virtual Try-On Feature
-  // virtualTryButton?.addEventListener("click", () => {
-  //   virtualTryModal.style.display = "flex";
-  // });
+// Virtual Try-On Feature
+// virtualTryButton?.addEventListener("click", () => {
+//   virtualTryModal.style.display = "flex";
+// });
 
-  // Close modals when clicking outside
+// Close modals when clicking outside
 //   window.addEventListener("click", (e) => {
 //     if (e.target === bookingModal) {
 //       bookingModal.style.display = "none";
@@ -942,112 +1007,3 @@ export {
 };
 
 console.log(1 + 1);
-
-// Function to send an email alert when contact us is filled
-// document.addEventListener("DOMContentLoaded", () => {
-  
-//   const contactForm = document.querySelector("#contactForm");
-//   if (contactForm) {
-//     contactForm.addEventListener("submit", contactEmail);
-//   }
-// });
-
-// function contactEmail(event) {
-//   event.preventDefault();
-
-//   let params = {
-//     name: document.getElementById("name").value,
-//     phone: document.getElementById("phone").value,
-//     email: document.getElementById("email").value,
-//     message: document.getElementById("message").value,
-//   };
-
-//   emailjs
-//   .sendForm("service_2pmrqw8", "template_73xpioc", params)
-//   .then(
-//     () => {
-//       alert("Thank you for contacting us!");
-//     },
-//     (error) => {
-//       console.error("Failed to send email: ", error);
-//       alert("There was an issue sending your message, Please try again");
-//     },
-//   );
-// }
-function contactEmail(event) {
-  event.preventDefault();
-
-  // Ensure EmailJS is initialized
-  if (!email) {
-    console.error("EmailJS is not loaded");
-    alert("Email service is not available. Please try again later.");
-    return;
-  }
-
-  // Validate form fields
-  const name = document.getElementById("name").value.trim();
-  const phone = document.getElementById("phone").value.trim();
-  const email = document.getElementById("email").value.trim();
-  const message = document.getElementById("message").value.trim();
-
-  // Basic validation
-  if (!name || !email || !message) {
-    alert("Please fill in all required fields");
-    return;
-  }
-
-  // Prepare params
-  let params = {
-    name,
-    phone,
-    email,
-    message
-  };
-
-  // Disable submit button to prevent multiple submissions
-  const submitButton = event.target.querySelector('button[type="submit"]');
-  submitButton.disabled = true;
-
-  console.log("Attempting to send email with params:", params);
-
-  emailjs
-    .send("service_2pmrqw8", "template_73xpioc", params)
-    .then(
-      (response) => {
-        console.log("Email sent successfully!", response);
-        alert("Thank you for contacting us!");
-        event.target.reset(); // Clear form
-      },
-      (error) => {
-        console.error("Failed to send email:", error);
-        console.error("Error details:", 
-          "Status:", error.status, 
-          "Text:", error.text
-        );
-        alert("There was an issue sending your message. Please try again.");
-      }
-    )
-    .finally(() => {
-      // Re-enable submit button
-      submitButton.disabled = false;
-    });
-}
-
-// Ensure EmailJS library is loaded
-document.addEventListener("DOMContentLoaded", () => {
-  // Make sure to add the script tag for EmailJS in your HTML
-  // const script = document.createElement('script');
-  // script.src = 'https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js';
-  // script.onload = () => {
-  //   emailjs.init("YOUR_PUBLIC_KEY"); // Replace with your actual public key
-  // };
-  // document.body.appendChild(script);
-
-  const contactForm = document.querySelector("#contactForm");
-  if (contactForm) {
-    contactForm.addEventListener("submit", contactEmail);
-  }
-});
-console.log("Document ready. Initializing...");
-console.log("Contact form:", document.querySelector("#contactForm"));
-console.log("EmailJS status:", typeof emailjs);

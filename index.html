@@ -45,20 +45,18 @@
     />
 
     <!-- Script -->
-     <script  src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
-    </script>
-    <!-- <script type="text/javascript">
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
       (function () {
         emailjs.init({
           publicKey: "EevX8WfcudHu9GwPh",
         });
       })();
-    </script> -->
-
+    </script>
 
     <!-- <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script>
-      emailjs.init(""); // Replace with your EmailJS Public Key
+      emailjs.init("EevX8WfcudHu9GwPh"); // Replace with your EmailJS Public Key
     </script> -->
   </head>
 
@@ -692,25 +690,30 @@
             <div class="message-form-grid">
               <div class="message-form-group">
                 <label for="name">Your Name</label>
-                <input type="text" id="name" name="name" required />
+                <input type="text" id="name" name="name" />
               </div>
 
               <div class="message-form-group">
                 <label for="phone">Your Phone</label>
-                <input type="tel" name="phone" id="phone" required />
+                <input type="tel" name="phone" id="phone" />
               </div>
 
               <div class="message-form-group">
                 <label for="email">Your Email Address</label>
-                <input type="email" name="email" id="email" required />
+                <input type="email" name="email" id="user_email" />
               </div>
 
               <div class="message-form-group">
                 <label for="message">Your Message</label>
-                <input type="text" name="message" id="message" required />
+                <input type="text" name="message" id="message" />
               </div>
             </div>
-            <button type="submit" class="btn btn-primary btnContactUs">
+            <button
+              type="submit"
+              value="send"
+              class="btn btn-primary btnContactUs"
+              onclick="contactEmail"
+            >
               Send your message
             </button>
           </form>
