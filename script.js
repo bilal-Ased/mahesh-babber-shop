@@ -828,21 +828,6 @@ function initializeBookingSystem() {
   });
 }
 
-// Virtual Try-On Feature
-// virtualTryButton?.addEventListener("click", () => {
-//   virtualTryModal.style.display = "flex";
-// });
-
-// Close modals when clicking outside
-//   window.addEventListener("click", (e) => {
-//     if (e.target === bookingModal) {
-//       bookingModal.style.display = "none";
-//     }
-//     if (e.target === virtualTryModal) {
-//       virtualTryModal.style.display = "none";
-//     }
-//   });
-// }
 
 // Form Validation
 function validateBookingData(data) {
