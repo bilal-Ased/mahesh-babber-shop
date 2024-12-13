@@ -871,13 +871,37 @@ h6 {
 .input-icon-wrapper {
   position: relative;
   display: flex;
-  align-items: center;
+  align-items: center; 
 }
+
+/* .input-icon-wrapper input {
+  flex: 1;
+  margin-right: 20px;
+  padding: 14px 20px;
+  border: 0;
+  outline: 0;
+  font-size: 18px;
+  border-radius: 5px;
+  position: relative;
+  color: var(--primary-color);
+} */
 
 /* Hide default icons for date and time inputs */
 input[type="date"]::-webkit-calendar-picker-indicator,
 input[type="time"]::-webkit-calendar-picker-indicator {
-  display: none;
+  top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  height: inherit;
+  width: inherit;
+  position: absolute;
+  background-position: calc(100%  - 15px);
+  background-size: 30px;
+  color: var(--primary-color);
+  cursor: pointer;
+  font-style: var(--font-family);
+  font: inherit;
 }
 
 /* Position custom input icons */

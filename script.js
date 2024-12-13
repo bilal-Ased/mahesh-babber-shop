@@ -299,7 +299,65 @@ function contactEmail(event) {
   );
 }
 
-console.log(1 + 1);
+console.log(100 + 1);
+
+// Booking Form 
+document.addEventListener("DOMContentLoaded", () => {
+  const bookingForm = document.querySelector("#bookingForm");
+  if (bookingForm){
+    bookingForm.addEventListener("submit", selectBooking);
+  }
+});
+function selectBooking(event){
+  event.preventDefault();
+
+  console.log(1+1);
+
+  let parameters = {
+    customerName: bookingForm.querySelector("#customerName").value,
+    customerPhone: bookingForm.querySelector("#customerPhone").value,
+    service: bookingForm.querySelector("#service").value,
+    stylist: bookingForm.querySelector("#stylist").value,
+    date: bookingForm.querySelector("#date").value,
+    time: bookingForm.querySelector("#time").value,
+  };
+
+  // if (parameters.customerName.trim() ==''){
+  //   alert("Customer name is empty")
+  //   return
+  // }
+  // if (parameters.customerPhone.trim() ==''){
+  //   alert("Customer name is empty")
+  //   return
+  // }
+  // if (parameters.service.trim() ==''){
+  //   alert("Customer name is empty")
+  //   return
+  // }
+  // if (parameters.stylist.trim() ==''){
+  //   alert("Customer name is empty")
+  //   return
+  // }
+  // if (parameters.date.trim() ==''){
+  //   alert("Customer name is empty")
+  //   return
+  // }
+  // if (parameters.time.trim() ==''){
+  //   alert("Customer name is empty")
+  //   return
+  // }
+
+   emailjs.send("service_2pmrqw8", "Booking_Form_Id", parameters).then(
+    () => {
+      alert("Thank you for your Booking!");
+    },
+    (error) => {
+      console.error("Failed to send email: ", error);
+      alert("There was an issue sending your message, Please try again");
+    },
+  );
+}
+
 
 const slider = new TestimonialsSlider("testimonials-slider");
 

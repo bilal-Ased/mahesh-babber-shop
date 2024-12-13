@@ -258,17 +258,17 @@
             <div class="form-grid">
               <div class="form-group">
                 <label for="name">Your Name</label>
-                <input type="text" id="name" name="name" required />
+                <input type="text" id="customerName" name="customerName"  />
               </div>
 
               <div class="form-group">
                 <label for="phone">Your Phone</label>
-                <input type="tel" id="phone" name="phone" required />
+                <input type="tel" id="customerPhone" name="customerPhone"  />
               </div>
 
               <div class="form-group">
                 <label for="service">Select Service</label>
-                <select id="service" name="service" required>
+                <select id="service" name="service" >
                   <option value="">Choose a service...</option>
                   <option value="haircut">Haircut</option>
                   <option value="beard">Beard Trim</option>
@@ -278,7 +278,7 @@
 
               <div class="form-group">
                 <label for="stylist">Select Stylist</label>
-                <select id="stylist" name="stylist" required>
+                <select id="stylist" name="stylist" >
                   <option value="">Choose a stylist...</option>
                   <option value="john">John</option>
                   <option value="mike">Mike</option>
@@ -289,29 +289,20 @@
               <div class="form-group">
                 <label for="date">Select Date</label>
                 <div class="input-icon-wrapper">
-                  <input type="date" id="date" name="date" required />
-                  <img
-                    src="images/icons/calendar-days-solid.svg"
-                    alt="Calendar Icon"
-                    class="input-icon"
-                  />
+                  <input type="date" id="date" name="date" />
+                 
                 </div>
               </div>
 
               <div class="form-group">
                 <label for="time">Select Time</label>
                 <div class="input-icon-wrapper">
-                  <input type="time" id="time" name="time" required />
-                  <img
-                    src="images/icons/clock-regular.svg"
-                    alt="Clock Icon"
-                    class="input-icon"
-                  />
+                  <input type="time" id="time" name="time"/>
                 </div>
               </div>
             </div>
 
-            <button type="submit" class="btn btn-primary">
+            <button type="submit" class="btn btn-primary" onclick="selectBooking" value="send">
               Confirm Booking
             </button>
           </form>
