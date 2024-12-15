@@ -235,96 +235,178 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-// Booking Form 
+// // Booking Form 
+// document.addEventListener("DOMContentLoaded", () => {
+//   const bookingForm = document.querySelector("#bookingForm");
+//   // if (bookingForm){
+//   //   bookingForm.addEventListener("submit", selectBooking);
+//   // }
+//   if (bookingForm) {
+//     bookingForm.addEventListener("submit", (event) => {
+//       event.preventDefault();
+//       selectBooking(event);
+//     });
+//   }
+// });
+
+// function selectBooking(event){
+//   event.preventDefault();
+
+//   let parameters = {
+//     customerName: bookingForm.querySelector("#customerName").value,
+//     customerPhone: bookingForm.querySelector("#customerPhone").value,
+//     service: bookingForm.querySelector("#service").value,
+//     stylist: bookingForm.querySelector("#stylist").value,
+//     date: bookingForm.querySelector("#date").value,
+//     time: bookingForm.querySelector("#time").value,
+//   };
+
+//   // if (parameters.customerName.trim() ==''){
+//   //   alert("Customer name is empty")
+//   //   return
+//   // }
+//   // if (parameters.customerPhone.trim() ==''){
+//   //   alert("Customer name is empty")
+//   //   return
+//   // }
+//   // if (parameters.service.trim() ==''){
+//   //   alert("Customer name is empty")
+//   //   return
+//   // }
+//   // if (parameters.stylist.trim() ==''){
+//   //   alert("Customer name is empty")
+//   //   return
+//   // }
+//   // if (parameters.date.trim() ==''){
+//   //   alert("Customer name is empty")
+//   //   return
+//   // }
+//   // if (parameters.time.trim() ==''){
+//   //   alert("Customer name is empty")
+//   //   return
+//   // }
+
+//    emailjs.send("service_2pmrqw8", "Booking_Form_Id", parameters).then(
+//     () => {
+//       alert("Thank you for your Booking!");
+//     },
+//     (error) => {
+//       console.error("Failed to send email: ", error);
+//       alert("There was an issue sending your message, Please try again");
+//     }
+//   );
+// }
+
+// // Attach the event listener for opening the popup
+// document.addEventListener("DOMContentLoaded", () => {
+//   const bookingFormButton = document.getElementById("bookingFormButton");
+//   if (bookingFormButton) {
+//     bookingFormButton.addEventListener("click", (event) => {
+//       event.preventDefault();
+//       openPopup();
+//     });
+//   }
+// });
+
+// // Attach the event listener for closing the popup
+// document.addEventListener("DOMContentLoaded", () => {
+//   const closeBtn = document.getElementById("closeBtn");
+//   if (closeBtn) {
+//     closeBtn.addEventListener("click", (event) => {
+//       event.preventDefault();
+//       closePopup();
+//     });
+//   }
+// });
+
+// let popup = document.getElementById("popup");
+
+// // Open popup function
+// function openPopup() {
+//   popup.classList.add("open-popup");
+// }
+
+// // Close popup function
+// function closePopup() {
+//   popup.classList.remove("open-popup");
+// }
 document.addEventListener("DOMContentLoaded", () => {
   const bookingForm = document.querySelector("#bookingForm");
-  // if (bookingForm){
-  //   bookingForm.addEventListener("submit", selectBooking);
-  // }
+  const popup = document.getElementById("popup");
+  const bookingFormButton = document.getElementById("bookingFormButton");
+  const closeBtn = document.getElementById("closeBtn");
+
   if (bookingForm) {
-    bookingForm.addEventListener("submit", (event) => {
+    bookingForm.addEventListener("submit", function(event) {
       event.preventDefault();
-      selectBooking(event);
-      showTheToast();
+      selectBooking();
+    });
+  }
+
+  function selectBooking() {
+    // Collect form data
+    const parameters = {
+      customerName: document.querySelector("#customerName").value,
+      customerPhone: document.querySelector("#customerPhone").value,
+      service: document.querySelector("#service").value,
+      stylist: document.querySelector("#stylist").value,
+      date: document.querySelector("#date").value,
+      time: document.querySelector("#time").value,
+    };
+
+    // Validate form fields
+    const requiredFields = [
+      'customerName', 'customerPhone', 'service', 
+      'stylist', 'date', 'time'
+    ];
+
+    for (let field of requiredFields) {
+      if (!parameters[field] || parameters[field].trim() === '') {
+        alert(`Please fill in the ${field.replace(/([A-Z])/g, ' $1').toLowerCase()}`);
+        return;
+      }
+    }
+
+    // Send email using EmailJS
+    emailjs.send("service_2pmrqw8", "Booking_Form_Id", parameters)
+      .then(() => {
+        openPopup();
+      })
+      .catch((error) => {
+        console.error("Failed to send email: ", error);
+        alert("There was an issue sending your booking. Please try again.");
+      });
+  }
+
+  // Open popup function
+  function openPopup() {
+    if (popup) {
+      popup.classList.add("open-popup");
+    }
+  }
+
+  // Close popup function
+  function closePopup() {
+    if (popup) {
+      popup.classList.remove("open-popup");
+    }
+  }
+
+  // Event listeners
+  if (bookingFormButton) {
+    bookingFormButton.addEventListener("click", function(event) {
+      event.preventDefault();
+      selectBooking();
+    });
+  }
+
+  if (closeBtn) {
+    closeBtn.addEventListener("click", function(event) {
+      event.preventDefault();
+      closePopup();
     });
   }
 });
-
-function selectBooking(event){
-  event.preventDefault();
-
-  let parameters = {
-    customerName: bookingForm.querySelector("#customerName").value,
-    customerPhone: bookingForm.querySelector("#customerPhone").value,
-    service: bookingForm.querySelector("#service").value,
-    stylist: bookingForm.querySelector("#stylist").value,
-    date: bookingForm.querySelector("#date").value,
-    time: bookingForm.querySelector("#time").value,
-  };
-
-  // if (parameters.customerName.trim() ==''){
-  //   alert("Customer name is empty")
-  //   return
-  // }
-  // if (parameters.customerPhone.trim() ==''){
-  //   alert("Customer name is empty")
-  //   return
-  // }
-  // if (parameters.service.trim() ==''){
-  //   alert("Customer name is empty")
-  //   return
-  // }
-  // if (parameters.stylist.trim() ==''){
-  //   alert("Customer name is empty")
-  //   return
-  // }
-  // if (parameters.date.trim() ==''){
-  //   alert("Customer name is empty")
-  //   return
-  // }
-  // if (parameters.time.trim() ==''){
-  //   alert("Customer name is empty")
-  //   return
-  // }
-
-   emailjs.send("service_2pmrqw8", "Booking_Form_Id", parameters).then(
-    () => {
-      alert("Thank you for your Booking!");
-    },
-    (error) => {
-      console.error("Failed to send email: ", error);
-      alert("There was an issue sending your message, Please try again");
-    }
-  );
-}
-
-
-
-function showTheToast(){
-  const toastBox = document.getElementById("toastBox");
-   if(!toastBox){
-    console.error("Toast Element Not found")
-    return;
-   } 
-
-  let toast = document.createElement("div");
-  toast.classList.add('toast');
-  toast.innerHTML = 'Thank you for Booking!';
-  toastBox.appendChild(toast);
-}
-
-let popup = document.getElementById("popup");
-
-function openPopup(){
-  popup.classList.add(".open-popup")
-}
-
-function closePopup(){
-  popup.classList.remove(".open-popup")
-}
-
-
-
 
 
 //Contact Us Form

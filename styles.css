@@ -1885,7 +1885,13 @@ footer .wave#wave4 {
     grid-template-columns: 1fr;
   }
 
-  .section-header h2 {
+  .section-header h2 {.popup img {
+      width: 100px;
+      margin-top: -50px;
+      border-radius: 50%;
+      box-shadow: var(--box-shadow);
+      background-color: var(--primary-dark);
+    }
     font-size: 2rem;
   }
 }
@@ -1995,17 +2001,6 @@ footer .wave#wave4 {
 }
 
 /* Toast Notification */
-.toast{
-  width: 400px;
-  height: 80px;
-  background: var(--primary-light);
-  font: var(--font-family);
-  font-weight: 400;
-  margin: 15px 0;
-  box-shadow: var(--box-shadow);
-  z-index: 2000;
-}
-
 .popup{
     width: 400px;
       border-radius: 6px;
