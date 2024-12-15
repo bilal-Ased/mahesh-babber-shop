@@ -301,12 +301,20 @@
                 </div>
               </div>
             </div>
+            <!-- <button id="bookingFormButton" type="submit" class="btn btn-primary" onclick="selectBooking(); showTheToast()"
+              value="send">
+              Confirm Booking
+            </button> -->
 
-            <button type="submit" class="btn btn-primary" onclick="selectBooking(); showToast()" value="send">
+            <button id="bookingFormButton" type="submit" class="btn btn-primary" onclick="openPopup()" value="send">
               Confirm Booking
             </button>
-            <div class="toastBox">
-
+            <div id="popup" class="popup">
+              <!-- <i class="fa-solid fa-check fa-beat fa-xl" class="checkMark" style="color: #63E6BE;"></i> -->
+               <img src="images/icons/check-solid.svg">
+              <h2>Thank you</h2>
+              <p>Your Booking has been received</p>
+              <button type="button" class="btn btn-primary" onclick="closePopup()">OK</button>
             </div>
           </form>
         </div>
