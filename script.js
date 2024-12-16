@@ -234,102 +234,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-
-// // Booking Form 
-// document.addEventListener("DOMContentLoaded", () => {
-//   const bookingForm = document.querySelector("#bookingForm");
-//   // if (bookingForm){
-//   //   bookingForm.addEventListener("submit", selectBooking);
-//   // }
-//   if (bookingForm) {
-//     bookingForm.addEventListener("submit", (event) => {
-//       event.preventDefault();
-//       selectBooking(event);
-//     });
-//   }
-// });
-
-// function selectBooking(event){
-//   event.preventDefault();
-
-//   let parameters = {
-//     customerName: bookingForm.querySelector("#customerName").value,
-//     customerPhone: bookingForm.querySelector("#customerPhone").value,
-//     service: bookingForm.querySelector("#service").value,
-//     stylist: bookingForm.querySelector("#stylist").value,
-//     date: bookingForm.querySelector("#date").value,
-//     time: bookingForm.querySelector("#time").value,
-//   };
-
-//   // if (parameters.customerName.trim() ==''){
-//   //   alert("Customer name is empty")
-//   //   return
-//   // }
-//   // if (parameters.customerPhone.trim() ==''){
-//   //   alert("Customer name is empty")
-//   //   return
-//   // }
-//   // if (parameters.service.trim() ==''){
-//   //   alert("Customer name is empty")
-//   //   return
-//   // }
-//   // if (parameters.stylist.trim() ==''){
-//   //   alert("Customer name is empty")
-//   //   return
-//   // }
-//   // if (parameters.date.trim() ==''){
-//   //   alert("Customer name is empty")
-//   //   return
-//   // }
-//   // if (parameters.time.trim() ==''){
-//   //   alert("Customer name is empty")
-//   //   return
-//   // }
-
-//    emailjs.send("service_2pmrqw8", "Booking_Form_Id", parameters).then(
-//     () => {
-//       alert("Thank you for your Booking!");
-//     },
-//     (error) => {
-//       console.error("Failed to send email: ", error);
-//       alert("There was an issue sending your message, Please try again");
-//     }
-//   );
-// }
-
-// // Attach the event listener for opening the popup
-// document.addEventListener("DOMContentLoaded", () => {
-//   const bookingFormButton = document.getElementById("bookingFormButton");
-//   if (bookingFormButton) {
-//     bookingFormButton.addEventListener("click", (event) => {
-//       event.preventDefault();
-//       openPopup();
-//     });
-//   }
-// });
-
-// // Attach the event listener for closing the popup
-// document.addEventListener("DOMContentLoaded", () => {
-//   const closeBtn = document.getElementById("closeBtn");
-//   if (closeBtn) {
-//     closeBtn.addEventListener("click", (event) => {
-//       event.preventDefault();
-//       closePopup();
-//     });
-//   }
-// });
-
-// let popup = document.getElementById("popup");
-
-// // Open popup function
-// function openPopup() {
-//   popup.classList.add("open-popup");
-// }
-
-// // Close popup function
-// function closePopup() {
-//   popup.classList.remove("open-popup");
-// }
+// // Booking Form
 document.addEventListener("DOMContentLoaded", () => {
   const bookingForm = document.querySelector("#bookingForm");
   const popup = document.getElementById("popup");
@@ -337,7 +242,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const closeBtn = document.getElementById("closeBtn");
 
   if (bookingForm) {
-    bookingForm.addEventListener("submit", function(event) {
+    bookingForm.addEventListener("submit", function (event) {
       event.preventDefault();
       selectBooking();
     });
@@ -356,19 +261,26 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Validate form fields
     const requiredFields = [
-      'customerName', 'customerPhone', 'service', 
-      'stylist', 'date', 'time'
+      "customerName",
+      "customerPhone",
+      "service",
+      "stylist",
+      "date",
+      "time",
     ];
 
     for (let field of requiredFields) {
-      if (!parameters[field] || parameters[field].trim() === '') {
-        alert(`Please fill in the ${field.replace(/([A-Z])/g, ' $1').toLowerCase()}`);
+      if (!parameters[field] || parameters[field].trim() === "") {
+        alert(
+          `Please fill in the ${field.replace(/([A-Z])/g, " $1").toLowerCase()}`,
+        );
         return;
       }
     }
 
     // Send email using EmailJS
-    emailjs.send("service_2pmrqw8", "Booking_Form_Id", parameters)
+    emailjs
+      .send("service_2pmrqw8", "Booking_Form_Id", parameters)
       .then(() => {
         openPopup();
       })
@@ -394,101 +306,87 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Event listeners
   if (bookingFormButton) {
-    bookingFormButton.addEventListener("click", function(event) {
+    bookingFormButton.addEventListener("click", function (event) {
       event.preventDefault();
       selectBooking();
     });
   }
 
   if (closeBtn) {
-    closeBtn.addEventListener("click", function(event) {
+    closeBtn.addEventListener("click", function (event) {
       event.preventDefault();
       closePopup();
     });
   }
 });
 
-
 //Contact Us Form
-// Function to send an email alert when contact us is filled
-// document.addEventListener("DOMContentLoaded", () => {
-//   const contactForm = document.querySelector("#contactForm");
-//   if (contactForm) {
-//     contactForm.addEventListener("submit", contactEmail);
-//   }
-// });
-
-// function contactEmail(event) {
-//   event.preventDefault();
-
-//   let params = {
-//     name: contactForm.querySelector("#name").value,
-//     phone: contactForm.querySelector("#phone").value,
-//     user_email: contactForm.querySelector("#user_email").value,
-//     message: contactForm.querySelector("#message").value,
-//   };
-
-//   //   if(params.name.trim() == '')
-//   // {
-//   // alert("Name is empty")
-//   // return
-//   // }
-
-//   //   if(params.phone.trim() == '')
-//   // {
-//   // alert("Phone is empty")
-//   // return
-//   // }
-
-//   //   if(params.user_email.trim() == '')
-//   // {
-//   // alert("Email is empty")
-//   // return
-//   // }
-//   //   if(params.message.trim() == '')
-//   // {
-//   // alert("Message is empty")
-//   // return
-//   // }
-
-//   // console.log(params)
-//   //   return;
-
-//   // emailjs.send("service_2pmrqw8","Mahesh_Contact_US_ID",{
-//   // name: "ne",
-//   // phone: "0988",
-//   // message: "656",
-//   // user_email: "test@gmail.com",
-//   // });
-
-//   // return
-
-//   emailjs.send("service_2pmrqw8", "Mahesh_Contact_US_ID", params).then(
-//     () => {
-//       alert("Thank you for contacting us!");
-//     },
-//     (error) => {
-//       console.error("Failed to send email: ", error);
-//       alert("There was an issue sending your message, Please try again");
-//     },
-//   );
-// }
-
 document.addEventListener("DOMContentLoaded", () => {
-  const contactForm = document.querySelector("#contactForm");
-  const popup = document.getElementById("popup");
-  const contactUsButton = document.getElementById("contactUsButton");
-  const closeBtn = document.getElementById("closeBtn");
+  // Initialize EmailJS
+  (function () {
+    emailjs.init("EevX8WfcudHu9GwPh");
+  })();
 
-  if(contactForm){
-    contactForm.addEventListener("submit", function(event){
-      event.preventDefault();
-      contactEmail();
-    });
+  const contactForm = document.querySelector("#contactForm");
+  const popupTwo = document.getElementById("popupTwo");
+  const closeBtnTwo = document.getElementById("closeBtnTwo");
+
+  function showCustomAlert(message) {
+    // Remove any existing custom alerts
+    const existingAlert = document.querySelector(".custom-alert");
+    if (existingAlert) {
+      existingAlert.remove();
+    }
+
+    // Create custom alert
+    const alertDiv = document.createElement("div");
+    alertDiv.classList.add("custom-alert");
+    alertDiv.textContent = message;
+    document.body.appendChild(alertDiv);
+
+    // Show alert
+    setTimeout(() => {
+      alertDiv.classList.add("show");
+    }, 10);
+
+    // Hide alert after 3 seconds
+    setTimeout(() => {
+      alertDiv.classList.remove("show");
+      setTimeout(() => {
+        alertDiv.remove();
+      }, 300);
+    }, 3000);
   }
 
-  function contactEmail() {
-    //collect data
+  function validateForm() {
+    const name = document.querySelector("#name").value.trim();
+    const phone = document.querySelector("#phone").value.trim();
+    const email = document.querySelector("#user_email").value.trim();
+    const message = document.querySelector("#message").value.trim();
+
+    if (!name || !phone || !email || !message) {
+      showCustomAlert("Please fill in all fields");
+      return false;
+    }
+
+    // Optional: Email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      showCustomAlert("Please enter a valid email address");
+      return false;
+    }
+
+    return true;
+  }
+
+  function contactEmail(event) {
+    event.preventDefault();
+
+    // Validate form first
+    if (!validateForm()) {
+      return;
+    }
+
     const params = {
       name: document.querySelector("#name").value,
       phone: document.querySelector("#phone").value,
@@ -496,59 +394,40 @@ document.addEventListener("DOMContentLoaded", () => {
       message: document.querySelector("#message").value,
     };
 
-    //form validation
-    const mandatoryFields = [
-      'name','phone','user_email','message'
-    ];
+    // Send email using EmailJS
+    emailjs
+      .send("service_2pmrqw8", "Mahesh_Contact_US_ID", params)
+      .then(() => {
+        // Open success popup
+        if (popupTwo) {
+          popupTwo.classList.add("open-popupTwo");
+        }
 
-    for (let field of mandatoryFields){
-      if(!params[field] || params[field].trim() === ''){
-        alert(`Please fill in the ${field.replace(/([A-Z])/g, '$1').toLowerCase()}`);
-        return;
-      }
-    }
-
-    //send emails using emailJs
-    emailjs.send("service_2pmrqw8", "Mahesh_Contact_US_ID",params)
-    .then(() => {
-      openPopup();
-    })
-    .catch((error) => {
-      console.error("Failed to send email: " , error);
-      alert("There was an issue with your booking . PLease try again.");
-    });
+        // Reset form
+        contactForm.reset();
+      })
+      .catch((error) => {
+        console.error("Failed to send email: ", error);
+        showCustomAlert(
+          "There was an issue sending your message. Please try again.",
+        );
+      });
   }
 
-    //Open popup function
-    function openPopup(){
-      if (popup) {
-        popup.classList.add("open-popup");
+  // Event Listeners
+  if (contactForm) {
+    contactForm.addEventListener("submit", contactEmail);
+  }
+
+  if (closeBtnTwo) {
+    closeBtnTwo.addEventListener("click", function (event) {
+      event.preventDefault();
+      if (popupTwo) {
+        popupTwo.classList.remove("open-popupTwo");
       }
-    }
-
-    //close popup function
-    function closePopup(){
-      if (popup) {
-        popup.classList.remove("open-popup");
-      }
-    }
-
-    //event listeners
-    if (contactUsButton){
-      contactForm.addEventListener("click", function(event){
-        event.preventDefault();
-        contactEmail();
-      });
-    }
-
-    if(closeBtn) {
-      closeBtn.addEventListener("click", function(event){
-        event.preventDefault();
-        closePopup();
-      });
-    }
-  });
-
+    });
+  }
+});
 
 const slider = new TestimonialsSlider("testimonials-slider");
 
@@ -1076,7 +955,6 @@ function initializeBookingSystem() {
     }
   });
 }
-
 
 // Form Validation
 function validateBookingData(data) {

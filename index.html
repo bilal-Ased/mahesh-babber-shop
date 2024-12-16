@@ -53,11 +53,6 @@
         });
       })();
     </script>
-
-    <!-- <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-    <script>
-      emailjs.init("EevX8WfcudHu9GwPh"); // Replace with your EmailJS Public Key
-    </script> -->
   </head>
 
   <body>
@@ -216,12 +211,6 @@
           </ul>
           <h4>Or Get In Touch!</h4>
           <div class="contact-info">
-            <!-- <p>Phone: (123) 456-7890
-          <a href="https://wa.me/1234567890" target="_blank">
-            <img src="images/icons/whatsapp-brands-solid.svg" alt="WhatsApp" class="whatsapp-icon">
-          </a>
-        </p> -->
-
             <ul>
               <li>
                 <p>
@@ -258,17 +247,17 @@
             <div class="form-grid">
               <div class="form-group">
                 <label for="name">Your Name</label>
-                <input type="text" id="customerName" name="customerName"  />
+                <input type="text" id="customerName" name="customerName" />
               </div>
 
               <div class="form-group">
                 <label for="phone">Your Phone</label>
-                <input type="tel" id="customerPhone" name="customerPhone"  />
+                <input type="tel" id="customerPhone" name="customerPhone" />
               </div>
 
               <div class="form-group">
                 <label for="service">Select Service</label>
-                <select id="service" name="service" >
+                <select id="service" name="service">
                   <option value="">Choose a service...</option>
                   <option value="haircut">Haircut</option>
                   <option value="beard">Beard Trim</option>
@@ -278,7 +267,7 @@
 
               <div class="form-group">
                 <label for="stylist">Select Stylist</label>
-                <select id="stylist" name="stylist" >
+                <select id="stylist" name="stylist">
                   <option value="">Choose a stylist...</option>
                   <option value="john">John</option>
                   <option value="mike">Mike</option>
@@ -290,30 +279,32 @@
                 <label for="date">Select Date</label>
                 <div class="input-icon-wrapper">
                   <input type="date" id="date" name="date" />
-                 
                 </div>
               </div>
 
               <div class="form-group">
                 <label for="time">Select Time</label>
                 <div class="input-icon-wrapper">
-                  <input type="time" id="time" name="time"/>
+                  <input type="time" id="time" name="time" />
                 </div>
               </div>
             </div>
-            <!-- <button id="bookingFormButton" type="submit" class="btn btn-primary" onclick="selectBooking(); showTheToast()"
-              value="send">
-              Confirm Booking
-            </button> -->
 
-            <button id="bookingFormButton" type="submit" class="btn btn-primary"  value="send">
+            <button
+              id="bookingFormButton"
+              type="submit"
+              class="btn btn-primary"
+              value="send"
+            >
               Confirm Booking
             </button>
             <div id="popup" class="popup">
-               <img src="images/icons/check-solid.svg">
+              <img src="images/icons/check-solid.svg" />
               <h2>Thank you!</h2>
               <p>Your Booking has been reserved.</p>
-              <button type="button" class="btn btn-primary" id="closeBtn">OK</button>
+              <button type="button" class="btn btn-primary" id="closeBtn">
+                OK
+              </button>
             </div>
           </form>
         </div>
@@ -684,7 +675,6 @@
       </div>
 
       <div class="contact-cards">
-        <!-- contact us and location card -->
         <div class="card contact-us">
           <h3>Say Hello...</h3>
           <form id="contactForm">
@@ -693,38 +683,36 @@
                 <label for="name">Your Name</label>
                 <input type="text" id="name" name="name" />
               </div>
-
               <div class="message-form-group">
                 <label for="phone">Your Phone</label>
                 <input type="tel" name="phone" id="phone" />
               </div>
-
               <div class="message-form-group">
-                <label for="email">Your Email Address</label>
+                <label for="user_email">Your Email Address</label>
                 <input type="email" name="email" id="user_email" />
               </div>
-
               <div class="message-form-group">
                 <label for="message">Your Message</label>
-                <input type="text" name="message" id="message" />
+                <input name="message" id="message" />
               </div>
             </div>
             <button
               type="submit"
-              value="send"
               class="btn btn-primary btnContactUs"
-              
               id="contactUsButton"
             >
               Send your message
             </button>
-            <div id="popup" class="popup">
-              <img src="images/icons/check-solid.svg">
-              <h2>Thank you!</h2>
-              <p>Your Booking has been reserved.</p>
-              <button type="button" class="btn btn-primary" id="closeBtn">OK</button>
-            </div>
           </form>
+
+          <div id="popupTwo" class="popupTwo">
+            <img src="images/icons/check-solid.svg" alt="Success" />
+            <h2>Thank you!</h2>
+            <p>Your message has been sent.</p>
+            <button type="button" class="btn btn-primary" id="closeBtnTwo">
+              OK
+            </button>
+          </div>
         </div>
 
         <div class="card location-card">
