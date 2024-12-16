@@ -713,10 +713,17 @@
               type="submit"
               value="send"
               class="btn btn-primary btnContactUs"
-              onclick="contactEmail"
+              
+              id="contactUsButton"
             >
               Send your message
             </button>
+            <div id="popup" class="popup">
+              <img src="images/icons/check-solid.svg">
+              <h2>Thank you!</h2>
+              <p>Your Booking has been reserved.</p>
+              <button type="button" class="btn btn-primary" id="closeBtn">OK</button>
+            </div>
           </form>
         </div>
 

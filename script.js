@@ -411,69 +411,143 @@ document.addEventListener("DOMContentLoaded", () => {
 
 //Contact Us Form
 // Function to send an email alert when contact us is filled
+// document.addEventListener("DOMContentLoaded", () => {
+//   const contactForm = document.querySelector("#contactForm");
+//   if (contactForm) {
+//     contactForm.addEventListener("submit", contactEmail);
+//   }
+// });
+
+// function contactEmail(event) {
+//   event.preventDefault();
+
+//   let params = {
+//     name: contactForm.querySelector("#name").value,
+//     phone: contactForm.querySelector("#phone").value,
+//     user_email: contactForm.querySelector("#user_email").value,
+//     message: contactForm.querySelector("#message").value,
+//   };
+
+//   //   if(params.name.trim() == '')
+//   // {
+//   // alert("Name is empty")
+//   // return
+//   // }
+
+//   //   if(params.phone.trim() == '')
+//   // {
+//   // alert("Phone is empty")
+//   // return
+//   // }
+
+//   //   if(params.user_email.trim() == '')
+//   // {
+//   // alert("Email is empty")
+//   // return
+//   // }
+//   //   if(params.message.trim() == '')
+//   // {
+//   // alert("Message is empty")
+//   // return
+//   // }
+
+//   // console.log(params)
+//   //   return;
+
+//   // emailjs.send("service_2pmrqw8","Mahesh_Contact_US_ID",{
+//   // name: "ne",
+//   // phone: "0988",
+//   // message: "656",
+//   // user_email: "test@gmail.com",
+//   // });
+
+//   // return
+
+//   emailjs.send("service_2pmrqw8", "Mahesh_Contact_US_ID", params).then(
+//     () => {
+//       alert("Thank you for contacting us!");
+//     },
+//     (error) => {
+//       console.error("Failed to send email: ", error);
+//       alert("There was an issue sending your message, Please try again");
+//     },
+//   );
+// }
+
 document.addEventListener("DOMContentLoaded", () => {
   const contactForm = document.querySelector("#contactForm");
-  if (contactForm) {
-    contactForm.addEventListener("submit", contactEmail);
+  const popup = document.getElementById("popup");
+  const contactUsButton = document.getElementById("contactUsButton");
+  const closeBtn = document.getElementById("closeBtn");
+
+  if(contactForm){
+    contactForm.addEventListener("submit", function(event){
+      event.preventDefault();
+      contactEmail();
+    });
   }
-});
 
-function contactEmail(event) {
-  event.preventDefault();
+  function contactEmail() {
+    //collect data
+    const params = {
+      name: document.querySelector("#name").value,
+      phone: document.querySelector("#phone").value,
+      user_email: document.querySelector("#user_email").value,
+      message: document.querySelector("#message").value,
+    };
 
-  let params = {
-    name: contactForm.querySelector("#name").value,
-    phone: contactForm.querySelector("#phone").value,
-    user_email: contactForm.querySelector("#user_email").value,
-    message: contactForm.querySelector("#message").value,
-  };
+    //form validation
+    const mandatoryFields = [
+      'name','phone','user_email','message'
+    ];
 
-  //   if(params.name.trim() == '')
-  // {
-  // alert("Name is empty")
-  // return
-  // }
+    for (let field of mandatoryFields){
+      if(!params[field] || params[field].trim() === ''){
+        alert(`Please fill in the ${field.replace(/([A-Z])/g, '$1').toLowerCase()}`);
+        return;
+      }
+    }
 
-  //   if(params.phone.trim() == '')
-  // {
-  // alert("Phone is empty")
-  // return
-  // }
+    //send emails using emailJs
+    emailjs.send("service_2pmrqw8", "Mahesh_Contact_US_ID",params)
+    .then(() => {
+      openPopup();
+    })
+    .catch((error) => {
+      console.error("Failed to send email: " , error);
+      alert("There was an issue with your booking . PLease try again.");
+    });
+  }
 
-  //   if(params.user_email.trim() == '')
-  // {
-  // alert("Email is empty")
-  // return
-  // }
-  //   if(params.message.trim() == '')
-  // {
-  // alert("Message is empty")
-  // return
-  // }
+    //Open popup function
+    function openPopup(){
+      if (popup) {
+        popup.classList.add("open-popup");
+      }
+    }
 
-  // console.log(params)
-  //   return;
+    //close popup function
+    function closePopup(){
+      if (popup) {
+        popup.classList.remove("open-popup");
+      }
+    }
 
-  // emailjs.send("service_2pmrqw8","Mahesh_Contact_US_ID",{
-  // name: "ne",
-  // phone: "0988",
-  // message: "656",
-  // user_email: "test@gmail.com",
-  // });
+    //event listeners
+    if (contactUsButton){
+      contactForm.addEventListener("click", function(event){
+        event.preventDefault();
+        contactEmail();
+      });
+    }
 
-  // return
-
-  emailjs.send("service_2pmrqw8", "Mahesh_Contact_US_ID", params).then(
-    () => {
-      alert("Thank you for contacting us!");
-    },
-    (error) => {
-      console.error("Failed to send email: ", error);
-      alert("There was an issue sending your message, Please try again");
-    },
-  );
-}
-
+    if(closeBtn) {
+      closeBtn.addEventListener("click", function(event){
+        event.preventDefault();
+        closePopup();
+      });
+    }
+  });
 
 
 const slider = new TestimonialsSlider("testimonials-slider");
